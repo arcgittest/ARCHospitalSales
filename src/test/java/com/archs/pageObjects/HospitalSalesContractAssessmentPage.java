@@ -1,0 +1,315 @@
+package com.archs.pageObjects;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class HospitalSalesContractAssessmentPage {
+	WebDriver ldriver;
+	private WebDriverWait wait;
+	@SuppressWarnings("rawtypes")
+	private Wait fluentWait;
+	
+	@SuppressWarnings("deprecation")
+	public HospitalSalesContractAssessmentPage(WebDriver rdriver) {
+	ldriver=rdriver;
+	PageFactory.initElements(rdriver, this);
+	this.wait = new WebDriverWait(rdriver, 45);
+	this.fluentWait =
+            new FluentWait<WebDriver>(rdriver).withTimeout(1, TimeUnit.MINUTES).pollingEvery(1, TimeUnit.SECONDS)
+                    .ignoring(org.openqa.selenium.NoSuchElementException.class)
+                    .ignoring(org.openqa.selenium.ElementNotVisibleException.class)
+                    .ignoring(org.openqa.selenium.StaleElementReferenceException.class)
+                    .ignoring(org.openqa.selenium.WebDriverException.class)
+                    .ignoring(org.openqa.selenium.TimeoutException.class);
+	}
+	
+	
+	/*
+	 * Web Elements 
+	*/
+	
+	@FindBy (how = How.CSS, using = "div.listViewContent.slds-table--header-fixed_container > div.uiScroller.scroller-wrapper.scroll-bidirectional.native > div > div > table > tbody > tr:nth-child(1) > th > span > a")
+	@CacheLookup
+	WebElement linkContractAssessmentName;
+	
+	@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div > div.slds-grid.listDisplays.safari-workaround-anchor > div > div.slds-col.slds-no-space.forceListViewManagerPrimaryDisplayManager > div.forceListViewManagerGrid > div.listViewContent.slds-table--header-fixed_container > div.uiScroller.scroller-wrapper.scroll-bidirectional.native > div > div > table > tbody > tr:nth-child(1) > th > span > a")
+	@CacheLookup
+	WebElement ContractAssessmentNameLink;
+	
+	@FindBy (how = How.CSS, using = "flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg")
+	//@FindBy (how = How.XPATH, using = "//div[contains(@class,'uiMenu')]//div/a[contains(@title,'Show 4 more actions') and contains(@href,'javascript:void(0)')]")
+	@CacheLookup
+	WebElement drpdwnApprovalHistory;
+	
+	//@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg")
+	//@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg" )
+	@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg.slds-icon-text-default.slds-icon_xx-small")
+	//@FindBy (how = How.XPATH, using = "//div/div[1]/div[5]/one-record-home-flexipage2/forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c/flexipage-record-home-template-desktop2/div/div[2]/div[2]/slot/slot/flexipage-component2[1]/slot/flexipage-aura-wrapper/div/div/article/div[2]/div/div/div/a")
+	@CacheLookup
+	WebElement ApprovalHistoryDropDown;
+	
+	@FindBy (how = How.XPATH, using = "//div/ul/li[1]/a[contains(@title,'Approve')]")
+	@CacheLookup
+	WebElement linkApprove;
+	
+	//@FindBy (how = How.CSS, using = "div > div.slds-col.slds-no-flex.slds-grid.slds-grid_vertical-align-center.actionsContainer > ul > li:nth-child(1) > a > div")
+	@FindBy (how = How.XPATH, using = "//div[contains(@style,'top: 79px; opacity: 1; position: absolute; left: 1219px;')]/div[contains(@class,'branding-actions actionMenu')]/ul[contains(@role,'presentation')]/li[contains(@role,'presentation')]/a[contains(@href,'javascript:void(0);')]/div[contains(@role,'button') and contains(.,'Approve')]")
+	@CacheLookup
+	WebElement linkApproveTwo;
+	
+	@FindBy (how = How.CSS, using = "div.modal-footer.slds-modal__footer > div > button.slds-button.slds-button--neutral.modal-button-left.actionButton.uiButton--default.uiButton--brand.uiButton")
+	@CacheLookup
+	WebElement btnApprove;
+	
+	
+	@FindBy (how = How.CSS, using = "div > div.modal-footer.slds-modal__footer > div > button.slds-button.slds-button--neutral.modal-button-left.actionButton.uiButton--default.uiButton--brand.uiButton")
+	@CacheLookup
+	WebElement ApproveBtn;
+	
+	@FindBy (how = How.CSS, using = "#oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(3) > a")
+	@CacheLookup
+	WebElement AccountTab;
+	
+	//@FindBy (how = How.CSS, using = "#oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(7) > a")
+	@FindBy (how = How.XPATH, using = "//div[3]/one-appnav/div/one-app-nav-bar/nav/div/one-app-nav-bar-item-root[7]/a")
+	@CacheLookup
+	WebElement ContractAssessmentTab;
+	
+	@FindBy (how = How.CSS, using = "div.forceToastManager--default forceToastManager lafStandardLayoutContainer lafAppLayoutHost forceAccess forceStyle oneOne > div.forceVisualMessageQueue")
+	@CacheLookup
+	WebElement msgApproveMessage;
+	
+	@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg")
+	//@FindBy (how = How.XPATH, using = "//div[contains(@class,'uiMenu')]//div/a[contains(@title,'Show 4 more actions') and contains(@href,'javascript:void(0)')]")
+	@CacheLookup
+	WebElement linkPricingDirectorApproval;
+	
+	//@FindBy (how = How.XPATH, using = "//a[contains(@id,'window') and contains(@href,'/lightning/r/0015600000EL7bRAAT/view') and contains(.,'AMERY HOSPITAL & CLINIC')]")
+	@FindBy (how = How.CSS, using ="#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__body > div > div > div > ul > li:nth-child(1) > div.forceVirtualActionMarker.forceVirtualAction")
+	@CacheLookup
+	WebElement linkCATAccountName;
+	
+	@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__body > div > div > div > ul > li:nth-child(1) > div.listItemBody.withActions > h3 > div > a")
+	//@FindBy (how = How.XPATH, using = "//a[contains(@class,'textUnderline outputLookupLink slds-truncate forceOutputLookup') and contains(@href,'/lightning/r/04i56000000G9ShAAK/view')]")
+	@CacheLookup
+	WebElement linkPricingDirectorApprovalRequired;
+	
+	@FindBy (how = How.CSS, using = "#oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(7) > a")
+	//@FindBy (how = How.XPATH, using = "//a[contains(@class,'textUnderline outputLookupLink slds-truncate forceOutputLookup') and contains(@href,'/lightning/r/04i56000000G9ShAAK/view')]")
+	@CacheLookup
+	WebElement linkContractAssessmentTab;
+	
+	
+	
+	/*
+	 * Method to wait until Account Tab is visible on top of the Account Details Page
+	 */
+	public void waitUntilAccountTabIsDisplayed()
+	{
+		wait.until(ExpectedConditions.visibilityOf(linkContractAssessmentName));
+	}
+	
+	/*
+	  Method to wait until CAT Name is visible on top of the Contract Assessment Page
+	*/
+	@SuppressWarnings("unchecked")
+	public void waitUntilCATNameIsDisplayed()
+	{
+		fluentWait.until(ExpectedConditions.visibilityOf(ContractAssessmentNameLink));
+		ContractAssessmentNameLink.click();
+	}
+	
+	/*
+	 * Method to click on the top Account History Drop Down on Contract Assessment Page
+	 */
+	public void clickOnAccountHistoryDrpDwn()
+	{
+		wait.until(ExpectedConditions.visibilityOf(drpdwnApprovalHistory));
+		drpdwnApprovalHistory.click();
+		
+	}
+	
+	/*
+	 * Method to click on the CAT Account Name Link Contract Assessment Page
+	 */
+	public void clickOnCATAccountNameLink()
+	{
+		wait.until(ExpectedConditions.visibilityOf(linkCATAccountName));
+		linkCATAccountName.click();
+		
+	}
+	
+	/*
+	 * Method to click on the top Account Tab Contract Assessment Page
+	 */
+	@SuppressWarnings("unchecked")
+	public void clickOnAccountTab()
+	{
+		fluentWait.until(ExpectedConditions.visibilityOf(AccountTab));
+		//wait.until(ExpectedConditions.visibilityOf(AccountTab));
+		AccountTab.click();
+		
+	}
+	
+	
+	/*
+	 * Method to click on the top Contract Assessment Tab Contract Assessment Page
+	 */
+	public void clickOnContractAssessmentTab()
+	{
+		WebElement element = ldriver.findElement(By.xpath("//div[3]/one-appnav/div/one-app-nav-bar/nav/div/one-app-nav-bar-item-root[7]/a"));
+		JavascriptExecutor executor = (JavascriptExecutor)ldriver;
+		executor.executeScript("arguments[0].click();", element);
+		
+	}
+	
+	
+	/*
+	 * Method to click on the top Contract Assessment Link Contract Assessment Page
+	 */
+	public void clickOnContractAssessmentLink()
+	{
+		WebElement element = ldriver.findElement((By.xpath("//div[3]/one-appnav/div/one-app-nav-bar/nav/div/one-app-nav-bar-item-root[7]/a[contains(@title,'Contract Assessments')]")));
+		JavascriptExecutor executor = (JavascriptExecutor)ldriver;
+		executor.executeScript("arguments[0].click();", element);
+		
+	}
+	
+	
+	/*
+	 * Method to click on the Price Director Approval Required Link Contract Assessment Page
+	 */
+	//@SuppressWarnings("unchecked")
+	public void clickOnPriceDirectorApprovalRequiredLink()
+	{
+		
+		WebElement element = ldriver.findElement(By.xpath("//div/div[1]/div[4]/one-record-home-flexipage2/forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c/flexipage-record-home-template-desktop2/div/div[2]/div[2]/slot/slot/flexipage-component2[1]/slot/flexipage-aura-wrapper/div/div/article/div[3]/div/div/div/ul/li[1]/div[2]/h3/div/a"));
+		JavascriptExecutor executor = (JavascriptExecutor)ldriver;
+		executor.executeScript("arguments[0].click();", element);
+		
+	}
+	
+	/*
+	 * Method to click on the top Open Account History Drop Down on Contract Assessment Page
+	 */
+	//@SuppressWarnings("unchecked")
+	public void clickOnContractAssessmentDrpDwn()
+	{
+		wait.until(ExpectedConditions.visibilityOf(ApprovalHistoryDropDown));
+		ApprovalHistoryDropDown.click();
+	}
+	
+	/*
+	 * Method to click on Contract Assessment Name link on the CAT Page
+	 */
+	public void clickOnContractAssessmentName()
+	{
+		wait.until(ExpectedConditions.visibilityOf(linkContractAssessmentName));
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		linkContractAssessmentName.click();
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	
+	/*
+	 * Method to click on Contract Assessment Name link on the CAT Page
+	 */
+	public void clickOnContractAssessmentNameLink()
+	{
+		WebElement element = ldriver.findElement((By.xpath("//div/div[1]/div[2]/div/div/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr[1]/th/span/a[contains(@class,'slds-truncate outputLookupLink slds-truncate forceOutputLookup')]")));
+		JavascriptExecutor executor = (JavascriptExecutor)ldriver;
+		executor.executeScript("arguments[0].click();", element);
+	}
+	
+	
+	/*
+	 * Method to click on Pricing Director Approval link on the CAT Page
+	 */
+	//@SuppressWarnings("unchecked")
+	public void clickOnPricingDirectorApprovalLink()
+	{
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(linkPricingDirectorApproval)));
+		linkPricingDirectorApproval.click();
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	/*
+	 * Method to wait until Approve Link is visible under Approval History Drop Down
+	 */
+	public void waitUntilApproveLinkIsDisplayed()
+	{
+		wait.until(ExpectedConditions.visibilityOf(linkApprove));
+	}
+	
+	/*
+	 * Method to click on Approve link under Approval History Drop Down
+	 */
+	public void clickOnApproveLink()
+	{
+		linkApprove.click();
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	
+	/*
+	 * Method to click on Approve link Two under Approval History Drop Down
+	 */
+	public void clickOnSecondApproveLink()
+	{
+		WebElement element = ldriver.findElement(By.xpath("//div/ul/li[1]/a[contains(@title,'Approve')]"));
+		JavascriptExecutor executor = (JavascriptExecutor)ldriver;
+		executor.executeScript("arguments[0].click();", element);
+	}
+	
+	
+	/*
+	 * Method to click on Approve button under Approval History Drop Down
+	 */
+	
+	public void clickOnApproveBtn()
+	{
+		wait.until(ExpectedConditions.visibilityOf(btnApprove));
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		btnApprove.click();
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
+	}
+	
+	/*
+	 * Method to click on Pricing Director Approve button under Approval History Drop Down
+	 */
+	
+	public void clickOnApproveButtonn()
+	{
+		wait.until(ExpectedConditions.visibilityOf(ApproveBtn));
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		ApproveBtn.click();
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
+	}
+	
+	/*
+	 * Method to click on Approve button under Approve Contract Assessment Modal
+	 */
+	
+	public void clickOnApproveButton()
+	{
+		wait.until(ExpectedConditions.visibilityOf(ApproveBtn));
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		ApproveBtn.click();
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
+	}
+	
+	
+}

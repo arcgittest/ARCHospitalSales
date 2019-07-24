@@ -1,0 +1,12 @@
+com\archs\pageObjects\HospitalSalesPriceListPage.class
+com\archs\testCases\SingleHospitalSalesEndToEndTest.class
+com\archs\pageObjects\HospitalSalesCATPage.class
+com\archs\utilities\ReadConfig.class
+com\archs\pageObjects\HospitalSalesAccountDetailsPage.class
+com\archs\testCases\HospitalSalesLoginPageTest.class
+com\archs\utilities\Reporting.class
+com\archs\pageObjects\HospitalSalesNewBloodContractPage.class
+com\archs\pageObjects\HospitalSalesContractPage.class
+com\archs\testCases\TestBase.class
+com\archs\pageObjects\HospitalSalesContractAssessmentPage.class
+com\archs\pageObjects\HospitalSalesLoginPage.class
