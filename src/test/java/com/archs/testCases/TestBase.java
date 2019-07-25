@@ -49,6 +49,7 @@ public class TestBase {
 		options = new ChromeOptions();
 		options.addArguments("disable-infobars");
 		options.addArguments("--disable-notifications");
+		options.addArguments("--disable-features=VizDisplayCompositor");
 		driver=new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
