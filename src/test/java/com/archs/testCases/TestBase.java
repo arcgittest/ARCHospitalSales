@@ -49,8 +49,8 @@ public class TestBase {
 		options = new ChromeOptions();
 		options.addArguments("disable-infobars");
 		options.addArguments("--disable-notifications");
-		options.addArguments("--disable-features=VizDisplayCompositor");
-		options.addArguments("--disable-gpu");
+		//options.addArguments("--disable-features=VizDisplayCompositor");
+		//options.addArguments("--disable-gpu");
 		//options.addArguments("--headless");
 	    //options.addArguments("--window-size=1920,1080");
 		driver=new ChromeDriver(options);

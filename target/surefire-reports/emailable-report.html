@@ -9,10 +9,20 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">ARC HospitalSales</th></tr>
-<tr><td><a href="#t0">HospitalSales Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">537,819</td><td></td><td></td></tr>
+<tr><td><a href="#t0">HospitalSales Test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">409,017</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">ARC HospitalSales</th></tr></tbody><tbody id="t0"><tr><th colspan="4">HospitalSales Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.archs.testCases.SingleHospitalSalesEndToEndTest</td><td><a href="#m0">SingleHSEndToEndTest</a></td><td rowspan="1">1564010426451</td><td rowspan="1">379777</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">ARC HospitalSales</th></tr></tbody><tbody id="t0"><tr><th colspan="4">HospitalSales Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.archs.testCases.SingleHospitalSalesEndToEndTest</td><td><a href="#m0">SingleHSEndToEndTest</a></td><td rowspan="1">1564115118179</td><td rowspan="1">329717</td></tr></tbody>
 </table>
-<h2>HospitalSales Test</h2><h3 id="m0">com.archs.testCases.SingleHospitalSalesEndToEndTest#SingleHSEndToEndTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>HospitalSales Test</h2><h3 id="m0">com.archs.testCases.SingleHospitalSalesEndToEndTest#SingleHSEndToEndTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (b75e6c73978115fabac539de9cde186a)] -&gt; css selector: #oneHeader &gt; div.bBottom &gt; one-appnav &gt; div &gt; one-app-nav-bar &gt; nav &gt; div &gt; one-app-nav-bar-item-root:nth-child(7) &gt; a] (tried for 45 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;VAIO&apos;, ip: &apos;10.0.0.198&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_191&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\WINDOWS\TEMP\scoped_dir8...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61466}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 75.0.3770.142, webStorageEnabled: true}
+Session ID: b75e6c73978115fabac539de9cde186a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
+	at com.archs.pageObjects.HospitalSalesAccountDetailsPage.clickOnContractAssessmentLink(HospitalSalesAccountDetailsPage.java:219)
+	at com.archs.testCases.SingleHospitalSalesEndToEndTest.SingleHSEndToEndTest(SingleHospitalSalesEndToEndTest.java:100)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
