@@ -5,7 +5,7 @@
     <listener class-name="com.archs.utilities.Reporting"/>
   </listeners>
   <test thread-count="5" name="HospitalSales Test(failed)">
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="FF"/>
     <classes>
       <class name="com.archs.testCases.SingleHospitalSalesEndToEndTest">
         <methods>

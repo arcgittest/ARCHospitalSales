@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="ARC HospitalSales" duration-ms="409017" started-at="2019-07-26T04:24:00Z" finished-at="2019-07-26T04:30:49Z">
+  <suite name="ARC HospitalSales" duration-ms="502862" started-at="2019-07-26T05:01:53Z" finished-at="2019-07-26T05:10:15Z">
     <groups>
     </groups>
-    <test name="HospitalSales Test" duration-ms="409017" started-at="2019-07-26T04:24:00Z" finished-at="2019-07-26T04:30:49Z">
+    <test name="HospitalSales Test" duration-ms="502862" started-at="2019-07-26T05:01:53Z" finished-at="2019-07-26T05:10:15Z">
       <class name="com.archs.testCases.SingleHospitalSalesEndToEndTest">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.archs.testCases.SingleHospitalSalesEndToEndTest@511baa65]" name="setup" is-config="true" duration-ms="76913" started-at="2019-07-26T04:24:01Z" finished-at="2019-07-26T04:25:18Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.archs.testCases.SingleHospitalSalesEndToEndTest@511baa65]" name="setup" is-config="true" duration-ms="137378" started-at="2019-07-26T05:01:53Z" finished-at="2019-07-26T05:04:11Z">
           <params>
             <param index="0">
               <value>
@@ -18,23 +18,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="SingleHSEndToEndTest()[pri:0, instance:com.archs.testCases.SingleHospitalSalesEndToEndTest@511baa65]" name="SingleHSEndToEndTest" duration-ms="329717" started-at="2019-07-26T04:25:18Z" finished-at="2019-07-26T04:30:47Z">
+        <test-method status="FAIL" signature="SingleHSEndToEndTest()[pri:0, instance:com.archs.testCases.SingleHospitalSalesEndToEndTest@511baa65]" name="SingleHSEndToEndTest" duration-ms="323781" started-at="2019-07-26T05:04:13Z" finished-at="2019-07-26T05:09:37Z">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (b75e6c73978115fabac539de9cde186a)] -> css selector: #oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(7) > a] (tried for 45 second(s) with 500 milliseconds interval)
+              <![CDATA[Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (1c5ef40dfbc430758f5fa7065e260a87)] -> css selector: #oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(7) > a] (tried for 45 second(s) with 500 milliseconds interval)
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
 System info: host: 'VAIO', ip: '10.0.0.198', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_191'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\WINDOWS\TEMP\scoped_dir8...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61466}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 75.0.3770.142, webStorageEnabled: true}
-Session ID: b75e6c73978115fabac539de9cde186a]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 75.0.3770.142, chrome: {chromedriverVersion: 75.0.3770.140 (2d9f97485c7b..., userDataDir: C:\WINDOWS\TEMP\scoped_dir1...}, goog:chromeOptions: {debuggerAddress: localhost:62348}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 1c5ef40dfbc430758f5fa7065e260a87]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (b75e6c73978115fabac539de9cde186a)] -> css selector: #oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(7) > a] (tried for 45 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (1c5ef40dfbc430758f5fa7065e260a87)] -> css selector: #oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(7) > a] (tried for 45 second(s) with 500 milliseconds interval)
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
 System info: host: 'VAIO', ip: '10.0.0.198', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_191'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\WINDOWS\TEMP\scoped_dir8...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61466}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 75.0.3770.142, webStorageEnabled: true}
-Session ID: b75e6c73978115fabac539de9cde186a
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 75.0.3770.142, chrome: {chromedriverVersion: 75.0.3770.140 (2d9f97485c7b..., userDataDir: C:\WINDOWS\TEMP\scoped_dir1...}, goog:chromeOptions: {debuggerAddress: localhost:62348}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 1c5ef40dfbc430758f5fa7065e260a87
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
 at com.archs.pageObjects.HospitalSalesAccountDetailsPage.clickOnContractAssessmentLink(HospitalSalesAccountDetailsPage.java:219)
@@ -73,7 +73,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SingleHSEndToEndTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.archs.testCases.SingleHospitalSalesEndToEndTest@511baa65]" name="tearDown" is-config="true" duration-ms="1889" started-at="2019-07-26T04:30:48Z" finished-at="2019-07-26T04:30:49Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.archs.testCases.SingleHospitalSalesEndToEndTest@511baa65]" name="tearDown" is-config="true" duration-ms="33777" started-at="2019-07-26T05:09:41Z" finished-at="2019-07-26T05:10:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

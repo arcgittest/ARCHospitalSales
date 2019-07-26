@@ -9,6 +9,8 @@
 	
 	<test name="HospitalSales Test">
 		<parameter name="browser" value="chrome" />
+		<!-- <parameter name="browser" value="FF" /> -->
+		
 		<classes>
 			<!-- <class name="com.archs.testCases.HospitalSalesLoginPageTest" /> -->
 			<class name="com.archs.testCases.SingleHospitalSalesEndToEndTest" />

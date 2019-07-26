@@ -5,6 +5,8 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -34,6 +36,7 @@ public class TestBase {
 	public String password=readconfig.getPassword();
 	public static WebDriver driver;
 	public static ChromeOptions options;
+	public static FirefoxOptions option;
 	public static Logger logger;
 	
 	@Parameters("browser")
@@ -45,19 +48,31 @@ public class TestBase {
 		
 		//System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 		if(br.equals("chrome")) {
+	    //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
+
 		System.setProperty("webdriver.chrome.driver",readconfig.getChromePath());
 		options = new ChromeOptions();
 		options.addArguments("disable-infobars");
 		options.addArguments("--disable-notifications");
 		//options.addArguments("--disable-features=VizDisplayCompositor");
 		//options.addArguments("--disable-gpu");
-		//options.addArguments("--headless");
-	    //options.addArguments("--window-size=1920,1080");
+		options.addArguments("--headless");
+	    options.addArguments("--window-size=1920,1080");
 		driver=new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get(archsdqaURL);
-		} 
+		} else if(br.equals("FF")) {
+		//System.setProperty("webdriver.gecko.driver",readconfig.getChromePath());
+		System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+"//Drivers//geckodriver.exe");
+		option = new FirefoxOptions();
+		option.addArguments("disable-infobars");
+		option.addArguments("--disable-notifications");
+		driver=new FirefoxDriver(option);
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.get(archsdqaURL);
+		}
 		
 	}
 	
