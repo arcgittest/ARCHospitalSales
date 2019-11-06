@@ -1,5 +1,9 @@
 package com.archs.testCases;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +35,10 @@ public class TestBase {
 	public String password = "Tester@678!";*/
 	public String archsdqaURL=readconfig.getLoginURL();
 	public String arcaccountURL=readconfig.getAccountURL();
+	public String arcaccountdetailURL=readconfig.getArcAccountDetailURL();
 	public String arccatURL=readconfig.getArcCATURL();
+	public String arccontractassessmentURL=readconfig.getArcContractAssessmentURL();
+	public String arccontractlistviewURL=readconfig.getArcContractListViewURL();
 	public String username=readconfig.getUsername();
 	public String password=readconfig.getPassword();
 	public static WebDriver driver;
@@ -52,12 +59,23 @@ public class TestBase {
 
 		System.setProperty("webdriver.chrome.driver",readconfig.getChromePath());
 		options = new ChromeOptions();
-		options.addArguments("disable-infobars");
+		options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+		options.setExperimentalOption("useAutomationExtension", false);
+		options.addArguments("--disable-save-password-bubble");
+		options.addArguments("--disable-infobars");
 		options.addArguments("--disable-notifications");
+		options.addArguments("--no-proxy-server");
+		Map<String, Object> prefs = new HashMap<String, Object>();
+
+		prefs.put("credentials_enable_service", false);
+
+		prefs.put("profile.password_manager_enabled", false);
+
+		options.setExperimentalOption("prefs", prefs);
 		//options.addArguments("--disable-features=VizDisplayCompositor");
 		//options.addArguments("--disable-gpu");
-		options.addArguments("--headless");
-	    options.addArguments("--window-size=1920,1080");
+		//options.addArguments("--headless");
+	    //options.addArguments("--window-size=1920,1080");
 		driver=new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();

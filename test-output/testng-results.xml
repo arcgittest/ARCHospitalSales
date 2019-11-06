@@ -1,137 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="ARC HospitalSales" duration-ms="46948" started-at="2019-07-26T06:45:17Z" finished-at="2019-07-26T06:46:04Z">
+  <suite name="ARC HospitalSales" duration-ms="181227" started-at="2019-11-04T10:42:28Z" finished-at="2019-11-04T10:45:29Z">
     <groups>
     </groups>
-    <test name="HospitalSales Test" duration-ms="46948" started-at="2019-07-26T06:45:17Z" finished-at="2019-07-26T06:46:04Z">
-      <class name="com.archs.testCases.SingleHospitalSalesEndToEndTest">
-        <test-method status="FAIL" signature="setup(java.lang.String)[pri:0, instance:com.archs.testCases.SingleHospitalSalesEndToEndTest@7d9d1a19]" name="setup" is-config="true" duration-ms="40910" started-at="2019-07-26T06:45:22Z" finished-at="2019-07-26T06:46:03Z">
+    <test name="HospitalSales Test" duration-ms="181227" started-at="2019-11-04T10:42:28Z" finished-at="2019-11-04T10:45:29Z">
+      <class name="com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest@7d9d1a19]" name="setup" is-config="true" duration-ms="43171" started-at="2019-11-04T10:42:28Z" finished-at="2019-11-04T10:43:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[FF]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:43520
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'VAIO', ip: '10.0.0.198', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_191'
-Driver info: driver.version: FirefoxDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:43520
-Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
-System info: host: 'VAIO', ip: '10.0.0.198', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_191'
-Driver info: driver.version: FirefoxDriver
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:92)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:212)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:130)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
-at com.archs.testCases.TestBase.setup(TestBase.java:71)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:43520
-at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:242)
-at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:160)
-at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-at okhttp3.RealCall.execute(RealCall.java:77)
-at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:105)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:101)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:73)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-... 31 more
-Caused by: java.net.ConnectException: Connection refused: connect
-at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
-at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-at java.net.Socket.connect(Socket.java:589)
-at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:240)
-... 53 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="SKIP" signature="SingleHSEndToEndTest()[pri:0, instance:com.archs.testCases.SingleHospitalSalesEndToEndTest@7d9d1a19]" name="SingleHSEndToEndTest" duration-ms="0" started-at="2019-07-26T06:46:03Z" finished-at="2019-07-26T06:46:03Z">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method status="FAIL" signature="SingleHSPriceListAndCATDetailsTabValidationTest()[pri:0, instance:com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest@7d9d1a19]" name="SingleHSPriceListAndCATDetailsTabValidationTest" duration-ms="129862" started-at="2019-11-04T10:43:11Z" finished-at="2019-11-04T10:45:21Z">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:43520
+              <![CDATA[element click intercepted: Element <a data-aura-rendered-by="1099:0" href="javascript:void(0);" role="menuitem" aria-disabled="false" tabindex="0" title="Approve">...</a> is not clickable at point (1316, 277). Other element would receive the click: <one-record-home-flexipage2 data-aura-rendered-by="752:0" one-recordhomeflexipage2_recordhomeflexipage2-host=""></one-record-home-flexipage2>
+  (Session info: chrome=77.0.3865.90)
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
 System info: host: 'VAIO', ip: '10.0.0.198', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_191'
-Driver info: driver.version: FirefoxDriver]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: C:\Users\Dwaraka\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:53867}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7febf46219853971f6fc5f68184b237b]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:43520
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a data-aura-rendered-by="1099:0" href="javascript:void(0);" role="menuitem" aria-disabled="false" tabindex="0" title="Approve">...</a> is not clickable at point (1316, 277). Other element would receive the click: <one-record-home-flexipage2 data-aura-rendered-by="752:0" one-recordhomeflexipage2_recordhomeflexipage2-host=""></one-record-home-flexipage2>
+  (Session info: chrome=77.0.3865.90)
 Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
 System info: host: 'VAIO', ip: '10.0.0.198', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_191'
-Driver info: driver.version: FirefoxDriver
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:92)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: C:\Users\Dwaraka\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:53867}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7febf46219853971f6fc5f68184b237b
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:212)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:130)
-at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)
-at com.archs.testCases.TestBase.setup(TestBase.java:71)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at com.sun.proxy.$Proxy11.click(Unknown Source)
+at com.archs.pageObjects.HospitalSalesContractAssessmentPage.clickOnApproveLink(HospitalSalesContractAssessmentPage.java:299)
+at com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest.SingleHSPriceListAndCATDetailsTabValidationTest(SingleHospitalSalesPriceListAndContractDetailsTabValidationTest.java:125)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.lang.reflect.Method.invoke(Method.java:498)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
 at org.testng.TestRunner.run(TestRunner.java:505)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
@@ -147,54 +82,17 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:43520
-at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:242)
-at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:160)
-at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-at okhttp3.RealCall.execute(RealCall.java:77)
-at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:105)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:101)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:73)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-... 31 more
-Caused by: java.net.ConnectException: Connection refused: connect
-at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
-at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-at java.net.Socket.connect(Socket.java:589)
-at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:240)
-... 53 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SingleHSEndToEndTest -->
-        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.archs.testCases.SingleHospitalSalesEndToEndTest@7d9d1a19]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-07-26T06:46:04Z" finished-at="2019-07-26T06:46:04Z">
+        </test-method> <!-- SingleHSPriceListAndCATDetailsTabValidationTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest@7d9d1a19]" name="tearDown" is-config="true" duration-ms="7270" started-at="2019-11-04T10:45:22Z" finished-at="2019-11-04T10:45:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.archs.testCases.SingleHospitalSalesEndToEndTest -->
+      </class> <!-- com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest -->
     </test> <!-- HospitalSales Test -->
   </suite> <!-- ARC HospitalSales -->
 </testng-results>

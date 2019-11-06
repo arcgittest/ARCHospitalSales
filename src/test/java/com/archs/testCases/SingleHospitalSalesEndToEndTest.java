@@ -4,10 +4,11 @@ package com.archs.testCases;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.archs.pageObjects.HospitalSalesAccountDetailsPage;
+import com.archs.pageObjects.HospitalSalesAccountRelatedDetailsPage;
 import com.archs.pageObjects.HospitalSalesCATPage;
 import com.archs.pageObjects.HospitalSalesContractAssessmentPage;
 import com.archs.pageObjects.HospitalSalesContractPage;
@@ -40,18 +41,18 @@ public class SingleHospitalSalesEndToEndTest extends TestBase {
 	int irrdpSdpFee = 75;
 	int dirdFee = 400;
 	int washedFee = 500;
-	int surbloodtypelrbc = 0;
-	int shpscheduled = 0;
-	int shpnocharge = 0;
+	int surbloodtypelrbc = 10;
+	int shpscheduled = 10;
+	int shpnocharge = 10;
 	int typeabFee = 20;
 	int typAbcCryoFee = 20;
 	int hemoglobinFee = 51;
 	int antiCMVFee = 52;
 	int disRbcPrice = 50;
-	int shpHospitalFee = 0;
+	int shpHospitalFee = 10;
 	int disSDPFee = 50;
 	//int typeABCCryoFee = 20;
-	int SHPUnscheduledFee = 0;
+	int SHPUnscheduledFee = 10;
 	int SATFee = 50;
 	float surBloodFee = 100.00f;
 	int pooledCryoFee = 150;
@@ -102,10 +103,11 @@ public class SingleHospitalSalesEndToEndTest extends TestBase {
 		
 		
 		HospitalSalesContractAssessmentPage hscap = new HospitalSalesContractAssessmentPage(driver);
-		hscap.waitUntilAccountTabIsDisplayed();
+		//hscap.waitUntilAccountTabIsDisplayed();
 		hscap.clickOnContractAssessmentName();
 		hscap.clickOnAccountHistoryDrpDwn();
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+		Thread.sleep(3000);
 		hscap.clickOnApproveLink();
 		hscap.clickOnApproveBtn();
 		driver.navigate().refresh();
@@ -133,11 +135,11 @@ public class SingleHospitalSalesEndToEndTest extends TestBase {
 		
 		HospitalSalesContractPage hsc = new HospitalSalesContractPage(driver);
 		hsc.waitUntilTranslateTabIsDisplayed();
+		
 		hsc.clickOnGoButton();
-		Thread.sleep(2000);
 		
 		HospitalSalesPriceListPage hsplp = new HospitalSalesPriceListPage(driver);
-		
+		//hsplp.clickOnInitialRBCPrice();
 		hsplp.setLrbcPrice(lrrbcPrice);
 		Thread.sleep(1000);
 		//hsplp.setSDPPrice(sdpPrice);
@@ -170,7 +172,7 @@ public class SingleHospitalSalesEndToEndTest extends TestBase {
 		Thread.sleep(1000);
 		hsplp.setWashedFeePrice(washedFee);
 		Thread.sleep(1000);
-		hsplp.setShpScheduledPrice(shpscheduled);
+		/*hsplp.setShpScheduledPrice(shpscheduled);
 		Thread.sleep(1000);
 		hsplp.setShpNoChargePrice(shpnocharge);
 		Thread.sleep(1000);
@@ -197,7 +199,7 @@ public class SingleHospitalSalesEndToEndTest extends TestBase {
 		hsplp.setSURBloodFee(surBloodFee);
 		Thread.sleep(1000);
 		hsplp.clickOnSDPPrice();
-		Thread.sleep(1000);
+		Thread.sleep(1000);*/
 		
 		hsplp.clickOnNextButton();
 		hsplp.clickOnEscalateButton();
@@ -259,10 +261,36 @@ public class SingleHospitalSalesEndToEndTest extends TestBase {
 		
 		hsplp.clickOnTranslateSaveButton();
 		hsplp.waitUntilSavingPriceListModalIsNotDisplayed();
-		Thread.sleep(9000);
+		//hsplp.clickOnExitButton();
+		
+		driver.get(arcaccountdetailURL);
+		Thread.sleep(3000);
 		
 		
+		HospitalSalesAccountRelatedDetailsPage hsardp = new HospitalSalesAccountRelatedDetailsPage(driver);
+		hsardp.clickOnAccountRelatedLink();
+		hsardp.clickOnContractsLink();
+		hsc.clickOnContractLink();
+		hsc.waitUntilPriceListTabIsDisplayed();
+		hsc.selectFuturVersionDrpDwnOption();
+		hsc.clickOnApplyBtn();
+		hsc.clickOnApplyBttn();
+		hsc.clickOnExitBttn();
+		Thread.sleep(5000);
 		
+		
+		/*hsardp.clickOnContractsDrpDwn();
+		hsardp.clickOnContractDeleteLink();
+		hsardp.clickOnDeleteBtn();
+		//Thread.sleep(5000);
+		
+		driver.navigate().refresh();
+		driver.get(arccontractassessmentURL);
+		//hsadp.clickOnContractAssessmentLink();
+		//hscap.waitUntilAccountTabIsDisplayed();
+		hscap.clickOnContractAssessmentDropDown();
+		hscap.clickOnContractAssessmentDeleteLink();
+		hscap.clickOnContractAssessmentDeleteBtn();*/
 		
 	}
 }

@@ -41,7 +41,8 @@ public class HospitalSalesContractAssessmentPage {
 	 * Web Elements 
 	*/
 	
-	@FindBy (how = How.CSS, using = "div.listViewContent.slds-table--header-fixed_container > div.uiScroller.scroller-wrapper.scroll-bidirectional.native > div > div > table > tbody > tr:nth-child(1) > th > span > a")
+	//@FindBy (how = How.CSS, using = "div.listViewContent.slds-table--header-fixed_container > div.uiScroller.scroller-wrapper.scroll-bidirectional.native > div > div > table > tbody > tr:nth-child(1) > th > span > a")
+	@FindBy (how = How.CSS, using = "div > div > table > tbody > tr:nth-child(1) > th > span > a")
 	@CacheLookup
 	WebElement linkContractAssessmentName;
 	
@@ -49,21 +50,34 @@ public class HospitalSalesContractAssessmentPage {
 	@CacheLookup
 	WebElement ContractAssessmentNameLink;
 	
-	@FindBy (how = How.CSS, using = "flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg")
+	//@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div.flexipagePage.oneRecordHomeFlexipage > div > div.row.row-main > div.column.region-sidebar-right > div:nth-child(1) > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg")
+	//@FindBy (how = How.CSS, using = "flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg")
 	//@FindBy (how = How.XPATH, using = "//div[contains(@class,'uiMenu')]//div/a[contains(@title,'Show 4 more actions') and contains(@href,'javascript:void(0)')]")
+	//@FindBy (how = How.CSS, using = "flexipage-component2:nth-child(1) >  force-progressive-renderer > slot > slot > flexipage-aura-wrapper > div > div > article > div > div > div > div > a > lightning-icon > lightning-primitive-icon")
+	//@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-page-decorator > slot > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > force-progressive-renderer > slot > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid.forceRelatedListCardHeader > div > div > div > a > lightning-icon > lightning-primitive-icon > svg")
+	//@FindBy (how = How.XPATH, using = "//div[contains(@class,'uiMenu')]//div/a[contains(@title,'Show 4 more actions') and contains(@href,'javascript:void(0)')]")
+	@FindBy (how = How.XPATH, using = "//div[contains(@id,'brandBand_1')]/div/div[1]/div[2]/div/one-record-home-flexipage2/forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c/flexipage-record-page-decorator/slot/flexipage-record-home-template-desktop2/div/div[2]/div[2]/slot/slot/flexipage-component2[1]/force-progressive-renderer/slot/slot/flexipage-aura-wrapper/div/div/article/div[2]/div/div/div/a/lightning-icon/lightning-primitive-icon")
+
 	@CacheLookup
 	WebElement drpdwnApprovalHistory;
 	
 	//@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg")
 	//@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg" )
-	@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg.slds-icon-text-default.slds-icon_xx-small")
+	//@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div > one-record-home-flexipage2 > forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c > flexipage-record-home-template-desktop2 > div > div.slds-grid.slds-wrap.slds-col.slds-size_1-of-1.row.row-main > div.slds-size_1-of-1.slds-medium-size_4-of-12.slds-large-size_4-of-12.column.region-sidebar-right > slot > slot > flexipage-component2:nth-child(1) > slot > flexipage-aura-wrapper > div > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg.slds-icon-text-default.slds-icon_xx-small")
+	//@FindBy (how = How.CSS, using = "div > div > a.slds-button.slds-button--icon-x-small.slds-button--icon-border-filled > lightning-icon.slds-button__icon.slds-icon-utility-down.slds-icon_container.forceIcon")
+	//@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div > div.flexipagePage.oneRecordHomeFlexipage > div > div.row.row-main > div.column.region-sidebar-right > div:nth-child(1) > div > article > div.slds-card__header.slds-grid > div > div > div > a > lightning-icon > lightning-primitive-icon > svg")
 	//@FindBy (how = How.XPATH, using = "//div/div[1]/div[5]/one-record-home-flexipage2/forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c/flexipage-record-home-template-desktop2/div/div[2]/div[2]/slot/slot/flexipage-component2[1]/slot/flexipage-aura-wrapper/div/div/article/div[2]/div/div/div/a")
+	@FindBy (how = How.XPATH, using = "//div[contains(@id,'brandBand_1')]/div/div[1]/div/div/one-record-home-flexipage2/forcegenerated-flexipage_contract_assessment_record_page_contract_assessment__c/flexipage-record-page-decorator/slot/flexipage-record-home-template-desktop2/div/div[2]/div[2]/slot/slot/flexipage-component2[1]/force-progressive-renderer/slot/slot/flexipage-aura-wrapper/div/div/article/div[2]/div/div/div/a/lightning-icon/lightning-primitive-icon")
 	@CacheLookup
 	WebElement ApprovalHistoryDropDown;
 	
 	@FindBy (how = How.XPATH, using = "//div/ul/li[1]/a[contains(@title,'Approve')]")
 	@CacheLookup
 	WebElement linkApprove;
+	
+	@FindBy (how = How.XPATH, using = "//div/ul/li[2]/a[contains(@title,'Reject')]")
+	@CacheLookup
+	WebElement linkReject;
 	
 	//@FindBy (how = How.CSS, using = "div > div.slds-col.slds-no-flex.slds-grid.slds-grid_vertical-align-center.actionsContainer > ul > li:nth-child(1) > a > div")
 	@FindBy (how = How.XPATH, using = "//div[contains(@style,'top: 79px; opacity: 1; position: absolute; left: 1219px;')]/div[contains(@class,'branding-actions actionMenu')]/ul[contains(@role,'presentation')]/li[contains(@role,'presentation')]/a[contains(@href,'javascript:void(0);')]/div[contains(@role,'button') and contains(.,'Approve')]")
@@ -73,6 +87,11 @@ public class HospitalSalesContractAssessmentPage {
 	@FindBy (how = How.CSS, using = "div.modal-footer.slds-modal__footer > div > button.slds-button.slds-button--neutral.modal-button-left.actionButton.uiButton--default.uiButton--brand.uiButton")
 	@CacheLookup
 	WebElement btnApprove;
+	
+	@FindBy (how = How.CSS, using = "div.modal-footer.slds-modal__footer > div > button.slds-button.slds-button--neutral.modal-button-left.actionButton.uiButton--default.uiButton--brand.uiButton")
+	@CacheLookup
+	WebElement btnReject;
+	
 	
 	
 	@FindBy (how = How.CSS, using = "div > div.modal-footer.slds-modal__footer > div > button.slds-button.slds-button--neutral.modal-button-left.actionButton.uiButton--default.uiButton--brand.uiButton")
@@ -112,6 +131,19 @@ public class HospitalSalesContractAssessmentPage {
 	@CacheLookup
 	WebElement linkContractAssessmentTab;
 	
+	@FindBy (how = How.CSS, using = "div.forceListViewManagerGrid > div.listViewContent.slds-table--header-fixed_container > div.uiScroller.scroller-wrapper.scroll-bidirectional.native > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4) > span > div > a > lightning-icon > lightning-primitive-icon")
+	@CacheLookup
+	WebElement drpdwnContractAssessment;
+	
+	@FindBy (how = How.XPATH, using = "//a[contains(.,'Delete')]")
+	@CacheLookup
+	WebElement linkDelete;
+	
+	@FindBy (how = How.CSS, using = "body > div.desktop.container.forceStyle.oneOne.lafStandardLayoutContainer.lafAppLayoutHost.forceAccess.forceStyle.oneOne > div.DESKTOP.uiContainerManager > div > div.panel.slds-modal.slds-fade-in-open > div > div.modal-footer.slds-modal__footer > div > button.slds-button.slds-button--neutral.uiButton--default.uiButton--brand.uiButton.forceActionButton")
+	@CacheLookup
+	WebElement btnDelete;
+	
+	
 	
 	
 	/*
@@ -135,9 +167,11 @@ public class HospitalSalesContractAssessmentPage {
 	/*
 	 * Method to click on the top Account History Drop Down on Contract Assessment Page
 	 */
-	public void clickOnAccountHistoryDrpDwn()
+	@SuppressWarnings("unchecked")
+	public void clickOnAccountHistoryDrpDwn() throws InterruptedException
 	{
-		wait.until(ExpectedConditions.visibilityOf(drpdwnApprovalHistory));
+		fluentWait.until(ExpectedConditions.visibilityOf(drpdwnApprovalHistory));
+		Thread.sleep(3000);
 		drpdwnApprovalHistory.click();
 		
 	}
@@ -215,9 +249,12 @@ public class HospitalSalesContractAssessmentPage {
 	/*
 	 * Method to click on Contract Assessment Name link on the CAT Page
 	 */
+	@SuppressWarnings("unchecked")
 	public void clickOnContractAssessmentName()
 	{
-		wait.until(ExpectedConditions.visibilityOf(linkContractAssessmentName));
+		//wait.until(ExpectedConditions.visibilityOf(linkContractAssessmentName));
+		ldriver.navigate().refresh();
+		fluentWait.until(ExpectedConditions.visibilityOf(linkContractAssessmentName));
 		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		linkContractAssessmentName.click();
 		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -264,6 +301,16 @@ public class HospitalSalesContractAssessmentPage {
 	}
 	
 	
+	
+	/*
+	 * Method to click on Reject link under Approval History Drop Down
+	 */
+	public void clickOnRejectLink()
+	{
+		linkReject.click();
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
 	/*
 	 * Method to click on Approve link Two under Approval History Drop Down
 	 */
@@ -284,6 +331,18 @@ public class HospitalSalesContractAssessmentPage {
 		wait.until(ExpectedConditions.visibilityOf(btnApprove));
 		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		btnApprove.click();
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
+	}
+	
+	/*
+	 * Method to click on Reject button under Approval History Drop Down
+	 */
+	
+	public void clickOnRejectBtn()
+	{
+		wait.until(ExpectedConditions.visibilityOf(btnReject));
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		btnReject.click();
 		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
 	}
 	
@@ -311,5 +370,33 @@ public class HospitalSalesContractAssessmentPage {
 		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
 	}
 	
+	/*
+	 * Method to click on the top Contract Assessment Drop Down Contract Assessment Page
+	 */
+	public void clickOnContractAssessmentDropDown()
+	{
+		
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		drpdwnContractAssessment.click();
+		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+	}
 	
+	/*
+	 * Method to click on the Delete Link Drop Down Contract Assessment Page
+	 */
+	public void clickOnContractAssessmentDeleteLink()
+	{
+	  linkDelete.click();
+	  wait.until(ExpectedConditions.visibilityOf(btnDelete));
+	}
+	
+	/*
+	 * Method to click on the Delete Button on Contract Assessment Delete Page
+	 */
+	public void clickOnContractAssessmentDeleteBtn()
+	{
+		btnDelete.click();
+	  
+	}
 }

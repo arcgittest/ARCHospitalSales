@@ -51,7 +51,9 @@ private Wait fluentWait;
 	 * Web Elements 
 	*/
 	
-	@FindBy (how = How.CSS, using = "#oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root.navItem.slds-context-bar__item.slds-shrink-none.slds-is-active > a")
+	//@FindBy (how = How.CSS, using = "#oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root.navItem.slds-context-bar__item.slds-shrink-none.slds-is-active > a")
+	//@FindBy (how = How.CSS, using = "div > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(3) > a")
+	@FindBy (how = How.XPATH, using = "//header[contains(@id,'oneHeader')]/div[3]/one-appnav/div/one-app-nav-bar/nav/div/one-app-nav-bar-item-root[3]/a")
 	@CacheLookup
 	WebElement tabAccount;
 	
@@ -68,7 +70,8 @@ private Wait fluentWait;
 	@CacheLookup
 	WebElement btnCreateNewAssessment;
 	
-	@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div > section > div > header > lightning-progress-bar > div")
+	//@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div > section > div > header > lightning-progress-bar > div")
+	@FindBy (how = How.CSS, using = "section.slds-modal.slds-modal_large.slds-fade-in-open.slds-list-builder.cContractAssessmentToolApp > div.slds-modal__container > header.slds-modal__header")
 	@CacheLookup
 	WebElement catProgressBar;
 	
@@ -77,7 +80,9 @@ private Wait fluentWait;
 	@CacheLookup
 	WebElement TextCreateNewAssessmentTool;
 	
-	@FindBy (how = How.CSS, using = "#oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(7) > a")
+	//@FindBy (how = How.CSS, using = "#oneHeader > div.bBottom > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(7) > a")
+	//@FindBy (how = How.CSS, using = "div > one-appnav > div > one-app-nav-bar > nav > div > one-app-nav-bar-item-root:nth-child(7) > a")
+	@FindBy (how = How.XPATH, using = "//header[contains(@id,'oneHeader')]/div[3]/one-appnav/div/one-app-nav-bar/nav/div/one-app-nav-bar-item-root[7]/a")
 	@CacheLookup
 	WebElement linkContractAssessments;
 	
@@ -94,6 +99,8 @@ private Wait fluentWait;
 	{
 	btnCAT.click();		
 	}
+	
+	
 	
 	/*
 	 * Method to Click on CAT Button on the Account Details Page 
@@ -131,7 +138,16 @@ private Wait fluentWait;
 	executor.executeScript("arguments[0].click();", element);	
 	}
 	
-	
+	/*
+	 * Method to get CAT Status on Contract Modal Page 
+	 */	
+	public String getCATStatusOnModalPage()
+	{
+		WebElement textStatusWebElement= ldriver.findElement(By.cssSelector("#modal-content-id-1 > div > div.slds-scrollable.slds-grow > div > table > tbody > tr:nth-child(1) > td:nth-child(6) > div"));
+		String statusText= textStatusWebElement.getText();
+		System.out.println("CAT Status :" +statusText);
+		return statusText;
+		}
 	
 	/*
 	 * Method to Click on CAT Contract Link on the Create Assessment Pop Up 
@@ -214,10 +230,11 @@ private Wait fluentWait;
 	/*
 	 * Method to click on Contract Assessment Link on the Header
 	 */
+	
 	public void clickOnContractAssessmentLink()
 	{
-		wait.until(ExpectedConditions.visibilityOf(linkContractAssessments));
-		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//wait.until(ExpectedConditions.visibilityOf(linkContractAssessments));
+		//ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		linkContractAssessments.sendKeys(Keys.ENTER);
 		ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
@@ -225,9 +242,10 @@ private Wait fluentWait;
 	/*
 	 * Method to wait until Account Tab is visible on top of the Account Details Page
 	 */
+	@SuppressWarnings("unchecked")
 	public void waitUntilAccountTabIsDisplayed()
 	{
-		wait.until(ExpectedConditions.visibilityOf(tabAccount));
+		fluentWait.until(ExpectedConditions.visibilityOf(tabAccount));
 	}
 	
 	/*

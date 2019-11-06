@@ -1,10 +1,14 @@
 package com.archs.pageObjects;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -49,9 +53,57 @@ public class HospitalSalesPriceListPage {
 		@CacheLookup
 		WebElement inputLRRBCPrice;*/
 		
-		@FindBy (how = How.CSS, using = "div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(5) > div > lightning-input > div > input")
+		//@FindBy (how = How.CSS, using = "div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(5) > div > lightning-input > div > input")
+		//@FindBy (how = How.CSS, using = "html > body > div > div > section > #brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(5) > div > lightning-input > div > input")
+		@FindBy (how = How.XPATH, using = "//div/div[1]/div[3]/div/div[2]/ul[2]/div/div[1]/div/div[2]/div/table/tr[1]/td[4]/div/lightning-input/div/input")
 		@CacheLookup
 		WebElement inputLRRBCPrice;
+		
+		@FindBy (how = How.XPATH, using = "//div/div[1]/div[3]/div/div[2]/ul[2]/div/div[1]/div/div[2]/div/table/tr[2]/td[4]/div/lightning-input/div/input")
+		@CacheLookup
+		WebElement inputRRBCFrozenPrice;
+		
+		
+		@FindBy (how = How.XPATH, using = "//div/div[1]/div[3]/div/div[2]/ul[2]/div/ul[2]/div/div[1]/div/div[2]/div/table/tr[1]/td[4]/div/lightning-input/div/input")
+		@CacheLookup
+		WebElement inputSecondLRRBCPrice;
+		
+		@FindBy (how = How.XPATH, using = "//div/div[1]/div[3]/div/div[2]/ul[2]/div/ul[2]/div/div[1]/div/div[2]/div/table/tr[1]/td[4]/div/lightning-input/div/input")
+		@CacheLookup
+		WebElement inputSecondEscalateLRRBCPrice;
+		
+		@FindBy (how = How.XPATH, using = "//div/div[1]/div[3]/div/div[2]/ul[2]/div/ul[2]/div/div[1]/div/div[2]/div/table/tr[1]/td[4]/div/lightning-input/div/input")
+		@CacheLookup
+		WebElement inputThirdLRRBCPrice;
+		
+		//@FindBy (how = How.XPATH, using = "//div[contains(@id,'brandBand_1')]/div/div[1]/div[3]/div/div[2]/ul[2]/div/div[1]/div/div[2]/div/table/tr[1]/td[2]/div/span")
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(3) > div > span")
+		@CacheLookup
+		WebElement spanLRRBCPrice;
+		
+		@FindBy (how = How.CSS, using = "#modal-content-id-1 > table > tr:nth-child(2) > td:nth-child(3) > lightning-input > div")
+		@CacheLookup
+		WebElement modalLRRBCPrice;
+		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(3) > div > span")
+		@CacheLookup
+		WebElement spanSDPPrice;
+		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(11) > td:nth-child(3) > div > span")
+		@CacheLookup
+		WebElement span24HrPlasmaPrice;
+		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(12) > td:nth-child(3) > div > span")
+		@CacheLookup
+		WebElement spanFFPPrice;
+		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(16) > td:nth-child(3) > div > span")
+		@CacheLookup
+		WebElement spanCryoPrice;
+		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(17) > td:nth-child(3) > div > span")
+		@CacheLookup
+		WebElement spanCryoPoolPrice;
 		
 		
 		
@@ -59,9 +111,13 @@ public class HospitalSalesPriceListPage {
 		@CacheLookup
 		WebElement inputThirdYearLRRBCPrice;
 		
-		@FindBy (how = How.XPATH, using = "//div/div[1]/div[5]/div/div[2]/ul[2]/div/div[1]/div/div[2]/div/table/tr[2]/td[4]/div/lightning-input/div/input")
+		@FindBy (how = How.XPATH, using = "//div[contains(@id,'brandBand_1')]/div/div[1]/div[4]/div/div[2]/ul[2]/div/div[1]/div/div[2]/div/table/tr[2]/td[4]/div/lightning-input/div/input")
 		@CacheLookup
 		WebElement inputRBCPrice;
+		
+		@FindBy (how = How.XPATH, using = "//div[contains(@id,'brandBand_1')]/div/div[1]/div[4]/div/div[2]/ul[2]/div/div[1]/div/div[2]/div/table/tr[2]/td[4]/div/lightning-input/div/input")
+		@CacheLookup
+		WebElement inputInitialRBCPrice;
 		
 		@FindBy (how = How.XPATH, using = "//div/div[1]/div[5]/div/div[2]/ul[2]/div/div[1]/div/div[2]/div/table/tr[3]/td[4]/div/lightning-input/div/input")
 		@CacheLookup
@@ -111,36 +167,43 @@ public class HospitalSalesPriceListPage {
 		@CacheLookup
 		WebElement inputCryoPoolsPrice;
 		
-		@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(3) > div > lightning-input > div > input")
+		//@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(3) > div > lightning-input > div > input")
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-vertical_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(5) > div > lightning-input > div > input")
 		@CacheLookup
 		WebElement inputDeglycedFeePrice;
 		
 		
-		@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(3) > td:nth-child(3) > div > lightning-input > div > input")
+		//@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(3) > td:nth-child(3) > div > lightning-input > div > input")
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-vertical_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(3) > td:nth-child(5) > div > lightning-input > div > input")
 		@CacheLookup
 		WebElement inputFrozenFeePrice;
 		
-		@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(4) > td:nth-child(3) > div > lightning-input > div > input")
+		//@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(4) > td:nth-child(3) > div > lightning-input > div > input")
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-vertical_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(4) > td:nth-child(5) > div > lightning-input > div > input")
 		@CacheLookup
 		WebElement inputIrrdFeePrice;
 		
 		
-		@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(5) > td:nth-child(3) > div > lightning-input > div > input")
+		//@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(5) > td:nth-child(3) > div > lightning-input > div > input")
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-vertical_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(5) > td:nth-child(5) > div > lightning-input > div > input")
 		@CacheLookup
 		WebElement inputAutoSDPFeePrice;
 		
 		
 		
-		@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(6) > td:nth-child(3) > div > lightning-input > div > input")
+		//@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(6) > td:nth-child(3) > div > lightning-input > div > input")
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-vertical_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(6) > td:nth-child(5) > div > lightning-input > div > input")
 		@CacheLookup
 		WebElement inputIrrdpSDPFeePrice;
 		
-		@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(3) > div > lightning-input > div > input")
+		//@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(3) > div > lightning-input > div > input")
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-vertical_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(5) > div > lightning-input > div > input")
 		@CacheLookup
 		WebElement inputDirdFeePrice;
 		
 		
-		@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(8) > td:nth-child(3) > div > lightning-input > div > input")
+		//@FindBy (how = How.CSS, using = "div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-around_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(8) > td:nth-child(3) > div > lightning-input > div > input")
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-vertical_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(8) > td:nth-child(5) > div > lightning-input > div > input")
 		@CacheLookup
 		WebElement inputWashedFeePrice;
 		
@@ -239,6 +302,15 @@ public class HospitalSalesPriceListPage {
 		@CacheLookup
 		WebElement savingPricelistModal;
 		
+		@FindBy (how = How.XPATH, using = "//div[contains(@id,'brandBand_1')]/div/div[1]/div[5]/div/div[1]/div[2]/div[1]/button[contains(@aria-describedby,'navNext')]")
+		@CacheLookup
+		WebElement firstnextButton;
+		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(2) > li:nth-child(6) > p.slds-text-body_regular > div > div:nth-child(2) > textarea")
+		@CacheLookup
+		WebElement priceListApprovalTxtArea;
+		
+		
 		/*
 		 * Method to wait until LRRBC TextBox is visible on the PriceList Page
 		 */
@@ -254,6 +326,7 @@ public class HospitalSalesPriceListPage {
 		 */
 		public void setLrbcPrice(float lrrbcPrice) throws InterruptedException
 		{
+			Thread.sleep(9000);
 			wait.until(ExpectedConditions.visibilityOf(inputLRRBCPrice));
 			
             actions.click().build().perform();
@@ -264,6 +337,199 @@ public class HospitalSalesPriceListPage {
 			
 			
 		}
+		
+		/*
+		 * Method to click on RBC Frozen Price Text box on the PriceList Page
+		 */
+		public void clickOnRBCFrozenPrice() throws InterruptedException
+		{
+			Thread.sleep(9000);
+			wait.until(ExpectedConditions.visibilityOf(inputRRBCFrozenPrice));
+			
+            actions.click().build().perform();
+					
+			
+		}
+		
+		
+		/*
+		 * Method to set Data LRRBC Price Text box on the PriceList Page
+		 */
+		public void setApprovalComment(String plApprovalComment) throws InterruptedException
+		{
+			Thread.sleep(9000);
+			wait.until(ExpectedConditions.visibilityOf(priceListApprovalTxtArea));
+			
+            actions.click().build().perform();
+			
+			
+			String del = Keys.chord(Keys.CONTROL, "a") + Keys.DELETE; 
+			priceListApprovalTxtArea.sendKeys(del + plApprovalComment);
+			
+			
+		}
+		
+		/*
+		 * Method to get LRRBC Price Text box on the PriceList Page
+		 */
+		public Float getSecondLrbcPriceSpan() throws InterruptedException
+		{
+			Thread.sleep(9000);
+			//wait.until(ExpectedConditions.visibilityOf(inputSecondLRRBCPrice));
+			//actions.click(inputSecondLRRBCPrice).click().build().perform();
+			//Thread.sleep(1000);
+			//wait.until(ExpectedConditions.visibilityOf(spanSDPPrice));
+			//String LRRBCPriceSpan = spanLRRBCPrice.getAttribute("value");
+			//String SecLRRBCPriceSpan = inputSecondLRRBCPrice.getText();
+			String SecLRRBCPriceSpan = inputSecondLRRBCPrice.getAttribute("value");
+			System.out.println("SecLRRBCPriceSpan SecLRRBCPriceSpan..... " +SecLRRBCPriceSpan);
+			//String LRRBCSpanPrice = LRRBCPriceSpan.substring(LRRBCPriceSpan.indexOf("$")+1);
+			//String LRRBCSpanPrice = LRRBCPriceSpan.substring(LRRBCPriceSpan.lastIndexOf("$"));
+			//System.out.println("LRRBCSpanPrice LRRBCSpanPrice..... " +LRRBCSpanPrice);
+			//float LRRBCPrice = Float.valueOf(LRRBCSpanPrice.trim()).floatValue();
+			//float LRRBCPrice = Float.parseFloat(LRRBCSpanPrice);
+			//float LRRBCPrice = Float.valueOf(String.format("%.2f", LRRBCSpanPrice));
+			//float LRRBCPrice = Float.valueOf(SecLRRBCPriceSpan.trim()).floatValue();
+			
+			float LRRBCPrice = Float.parseFloat(SecLRRBCPriceSpan.substring(1));
+			//double LRRBCPrice = Double.parseDouble(LRRBCPriceSpan.substring(1));
+			//double LRRBCPrice = Double.valueOf(LRRBCSpanPrice);
+			System.out.println("LRRBCPrice LRRBCPrice..... " +LRRBCPrice);
+			//LRRBCPrice = Double.valueOf(LRRBCPrice);
+			//System.out.println("LRRBCPrice LRRBCPrice..... " +LRRBCPrice);
+		/*	LRRBCPrice = Float.valueOf(LRRBCPriceSpan.substring(1));
+			System.out.println("LRRBCPrice LRRBCPrice..... " +LRRBCPrice);*/
+			
+			//LRRBCPrice = new Float(LRRBCPrice).valueOf();
+			return LRRBCPrice;
+            			
+			
+		}
+		
+		/*
+		 * Method to get Two percent value on Second Year LRRBC Price Text box on the PriceList Page
+		 */
+		public Float getSecondYearTwoPercentLrbcPriceSpan() throws InterruptedException
+		{
+			Thread.sleep(9000);
+			wait.until(ExpectedConditions.visibilityOf(inputSecondEscalateLRRBCPrice));
+			String SecLRRBCPriceSpan = inputSecondEscalateLRRBCPrice.getAttribute("value");
+			System.out.println("LRRBCPriceSpan LRRBCPriceSpan..... " +SecLRRBCPriceSpan);
+			String LRRBCSpanPrice = SecLRRBCPriceSpan.substring(SecLRRBCPriceSpan.indexOf("$")+1);
+			//String LRRBCSpanPrice = LRRBCPriceSpan.substring(LRRBCPriceSpan.lastIndexOf("$"));
+			System.out.println("SecYearLRRBCSpanPrice SecYearLRRBCSpanPrice..... " +LRRBCSpanPrice);
+			
+			//float LRRBCPrice = Float.valueOf(LRRBCSpanPrice.trim()).floatValue();
+			
+			float LRBCPrice = Float.parseFloat(SecLRRBCPriceSpan.substring(1));
+			
+			System.out.println("SecYearLRRBCSpanPrice SecYearLRRBCSpanPrice..... " +LRBCPrice);
+			
+			
+			float LRRBCPrice = ((LRBCPrice * 2) / 100);
+			System.out.println("SecYearLRRBCSpanPrice SecYearLRRBCSpanPrice..... " +LRRBCPrice);
+			float lrbcprice = Float.sum(LRRBCPrice, LRBCPrice);
+			System.out.println("lrbcprice lrbcprice..... " +lrbcprice);
+			DecimalFormat twoDForm = new DecimalFormat("#.##");
+			float lrbcpricee =Float.valueOf(twoDForm.format(lrbcprice));
+			System.out.println("SecYearLRRBCSpanPrice SecYearLRRBCSpanPrice..... " +lrbcpricee);
+			return Float.valueOf(twoDForm.format(lrbcprice));
+			//return lrbcprice;
+            			
+			
+		}
+		
+		/*
+		 * Method to get LRRBC Price Text box on the PriceList Page
+		 */
+		public Float getThirdLrbcPriceSpan() throws InterruptedException
+		{
+			Thread.sleep(9000);
+			
+			String ThirdLRRBCPriceSpan = inputThirdLRRBCPrice.getAttribute("value");
+			System.out.println("ThirdLRRBCPriceSpan ThirdLRRBCPriceSpan..... " +ThirdLRRBCPriceSpan);
+			
+			
+			float ThirdLRRBCPrice = Float.parseFloat(ThirdLRRBCPriceSpan.substring(1));
+			
+			System.out.println("ThirdLRRBCPrice ThirdLRRBCPrice..... " +ThirdLRRBCPrice);
+			
+			return ThirdLRRBCPrice;
+			
+		}
+		
+		/*
+		 * Method to get LRRBC Price Text box on the PriceList Page
+		 */
+		public Float getLrbcPriceSpan() throws InterruptedException
+		{
+			Thread.sleep(9000);
+			wait.until(ExpectedConditions.visibilityOf(spanLRRBCPrice));
+			
+			//wait.until(ExpectedConditions.visibilityOf(spanSDPPrice));
+			//String LRRBCPriceSpan = spanLRRBCPrice.getAttribute("value");
+			String LRRBCPriceSpan = spanLRRBCPrice.getText();
+			System.out.println("LRRBCPriceSpan LRRBCPriceSpan..... " +LRRBCPriceSpan);
+			String LRRBCSpanPrice = LRRBCPriceSpan.substring(LRRBCPriceSpan.indexOf("$")+1);
+			//String LRRBCSpanPrice = LRRBCPriceSpan.substring(LRRBCPriceSpan.lastIndexOf("$"));
+			System.out.println("LRRBCSpanPrice LRRBCSpanPrice..... " +LRRBCSpanPrice);
+			
+			//float LRRBCPrice = Float.valueOf(LRRBCSpanPrice.trim()).floatValue();
+			
+			float LRBCPrice = Float.parseFloat(LRRBCPriceSpan.substring(1));
+			
+			System.out.println("LRRBCPrice LRRBCPrice..... " +LRBCPrice);
+			
+			
+			float LRRBCPrice = ((LRBCPrice * 2) / 100);
+			System.out.println("LRRBCPrice LRRBCPrice..... " +LRRBCPrice);
+			float lrbcprice = Float.sum(LRRBCPrice, LRBCPrice);
+			System.out.println("lrbcprice lrbcprice..... " +lrbcprice);
+			DecimalFormat twoDForm = new DecimalFormat("#.##");
+			float lrbcpricee =Float.valueOf(twoDForm.format(lrbcprice));
+			System.out.println("lrbcpricee lrbcpricee..... " +lrbcpricee);
+			return Float.valueOf(twoDForm.format(lrbcprice));
+			//return lrbcprice;
+            			
+			
+		}
+		
+		
+		/*
+		 * Method to get LRRBC Price Text box on the PriceList Page
+		 */
+		public Float getTwoPercentModalLrbcPrice() throws InterruptedException
+		{
+			Thread.sleep(9000);
+			//wait.until(ExpectedConditions.visibilityOf(modalLRRBCPrice));
+			
+			//wait.until(ExpectedConditions.visibilityOf(spanSDPPrice));
+			//String LRRBCPriceSpan = spanLRRBCPrice.getAttribute("value");
+			String LRRBCPriceSpan = modalLRRBCPrice.getText();
+			System.out.println("modalLRRBCPrice modalLRRBCPrice..... " +modalLRRBCPrice);
+			String LRRBCSpanPrice = LRRBCPriceSpan.substring(LRRBCPriceSpan.indexOf("$")+1);
+			//String LRRBCSpanPrice = LRRBCPriceSpan.substring(LRRBCPriceSpan.lastIndexOf("$"));
+			System.out.println("LRRBCSpanPrice LRRBCSpanPrice..... " +LRRBCSpanPrice);
+			//float LRRBCPrice = Float.valueOf(LRRBCSpanPrice.trim()).floatValue();
+			//float LRRBCPrice = Float.parseFloat(LRRBCSpanPrice);
+			//float LRRBCPrice = Float.valueOf(String.format("%.2f", LRRBCSpanPrice));
+			float LRRBCModalPrice = Float.valueOf(LRRBCSpanPrice.trim()).floatValue();
+			
+			LRRBCModalPrice = Float.parseFloat(LRRBCPriceSpan.substring(1));
+			//double LRRBCPrice = Double.parseDouble(LRRBCPriceSpan.substring(1));
+			//double LRRBCPrice = Double.valueOf(LRRBCSpanPrice);
+			System.out.println("LRRBCModalPrice LRRBCModalPrice..... " +LRRBCModalPrice);
+			//LRRBCPrice = Double.valueOf(LRRBCPrice);
+			//System.out.println("LRRBCPrice LRRBCPrice..... " +LRRBCPrice);
+		/*	LRRBCPrice = Float.valueOf(LRRBCPriceSpan.substring(1));
+			System.out.println("LRRBCPrice LRRBCPrice..... " +LRRBCPrice);*/
+			
+			//LRRBCPrice = new Float(LRRBCPrice).valueOf();
+			return LRRBCModalPrice;
+            			
+			
+		}
+		
 		
 		/*
 		 * Method to set Data LRRBC Price Text box For Third Year on the PriceList Page
@@ -302,15 +568,63 @@ public class HospitalSalesPriceListPage {
 		 */
 		public void clickOnSDPPrice() throws InterruptedException
 		{
+			/*WebElement element = ldriver.findElement((By.xpath("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(5) > div > lightning-input > div > input")));
+			actions.moveToElement(element).click().build().perform();*/
 			
-			
-			actions.moveToElement(inputSDPPrice);
+			//actions.moveToElement(inputSurBloodFeePrice).build().perform();
+			//Thread.sleep(2000);
+			/*String del = Keys.chord(Keys.CONTROL, "a") + Keys.DELETE; 
+			inputSurBloodFeePrice.sendKeys(del + surBloodFee);*/
+			//actions.click().build().perform();
+            //wait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(5) > div > lightning-input > div > input"))));			
+
+			//WebElement element = ldriver.findElement((By.cssSelector(("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(5) > div > lightning-input > div > input"))));
+			WebElement element = ldriver.findElement((By.cssSelector(("div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(4) > td:nth-child(5) > div > lightning-input > div > input"))));
+			//actions.moveToElement(element).click().build().perform();
+			actions.moveToElement(element);
+			Thread.sleep(5000);
 			actions.click().build().perform();
+			/*JavascriptExecutor executor = (JavascriptExecutor)ldriver;
+			executor.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+			executor.executeScript("arguments[0].scrollIntoView(true);", element);
+			executor.executeScript("arguments[0].click();", element);
+			Thread.sleep(5000);*/
+			//executor.executeScript("arguments[0].click();", element);
 			
-			
-						
+				
 		}
 		
+			
+		/*
+		 * Method to click on Initial RBC Price Text box on the PriceList Page
+		 */
+		public void clickOnInitialRBCPrice() throws InterruptedException
+		{
+			/*WebElement element = ldriver.findElement((By.xpath("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(5) > div > lightning-input > div > input")));
+			actions.moveToElement(element).click().build().perform();*/
+			
+			//actions.moveToElement(inputSurBloodFeePrice).build().perform();
+			//Thread.sleep(2000);
+			/*String del = Keys.chord(Keys.CONTROL, "a") + Keys.DELETE; 
+			inputSurBloodFeePrice.sendKeys(del + surBloodFee);*/
+			//actions.click().build().perform();
+            //wait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(5) > div > lightning-input > div > input"))));			
+
+			//WebElement element = ldriver.findElement((By.cssSelector(("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(7) > td:nth-child(5) > div > lightning-input > div > input"))));
+			WebElement element = ldriver.findElement((By.xpath(("//div[contains(@id,'brandBand_1')]/div/div[1]/div[4]/div/div[2]/ul[2]/div/div[1]/div/div[2]/div/table/tr[2]/td[4]/div/lightning-input/div/input"))));
+			//actions.moveToElement(element).click().build().perform();
+			actions.moveToElement(element);
+			Thread.sleep(5000);
+			actions.click().build().perform();
+			/*JavascriptExecutor executor = (JavascriptExecutor)ldriver;
+			executor.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+			executor.executeScript("arguments[0].scrollIntoView(true);", element);
+			executor.executeScript("arguments[0].click();", element);
+			Thread.sleep(5000);*/
+			//executor.executeScript("arguments[0].click();", element);
+			
+				
+		}
 		
 		/*
 		 * Method to set Data in 24 Hour Price Text box on the PriceList Page
@@ -384,9 +698,16 @@ public class HospitalSalesPriceListPage {
 		public void setDeglycedFeePrice(int deglycedfee) throws InterruptedException
 		{
 			
-			
-			actions.moveToElement(inputDeglycedFeePrice);
+			Thread.sleep(9000);
+			//wait.until(ExpectedConditions.visibilityOf(inputDeglycedFeePrice));
+			//WebElement element = ldriver.findElement((By.cssSelector(("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-vertical_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(5) > div > lightning-input > div > input"))));
+			WebElement element = ldriver.findElement((By.cssSelector(("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cPricelist > ul:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div.slds-m-vertical_x-small.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(5) > div > lightning-input > div > input"))));
+			actions.moveToElement(element).build();
+			Thread.sleep(5000);
 			actions.click().build().perform();
+			
+			/*actions.moveToElement(inputDeglycedFeePrice);
+			actions.click().build().perform();*/
 			
 			String del = Keys.chord(Keys.CONTROL, "a") + Keys.DELETE; 
 			inputDeglycedFeePrice.sendKeys(del + deglycedfee);
@@ -400,7 +721,8 @@ public class HospitalSalesPriceListPage {
 		 */
 		public void setFrozenFeePrice(int frozenfee) throws InterruptedException
 		{
-						
+
+			Thread.sleep(9000);		
 			actions.moveToElement(inputFrozenFeePrice);
 			actions.click().build().perform();
 			
@@ -1118,11 +1440,11 @@ public class HospitalSalesPriceListPage {
 		public void clickOnNextButton() throws InterruptedException
 		{
 			
-			WebElement element = ldriver.findElement((By.cssSelector("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-grid > div.slds-col.slds-no-flex.slds-grid.slds-align-top > div:nth-child(1) > button:nth-child(2)")));
-			JavascriptExecutor executor = (JavascriptExecutor)ldriver;
-			executor.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
-			executor.executeScript("arguments[0].click();", element);
-			Thread.sleep(7000);
+			WebElement element = ldriver.findElement((By.xpath("//button[contains(.,'Next')]")));
+			actions.moveToElement(element).click().build().perform();
+			Thread.sleep(5000);
+			
+			
 			}
 		
 		/*
@@ -1148,11 +1470,29 @@ public class HospitalSalesPriceListPage {
 		
 		public void clickOnSecondNextButton() throws InterruptedException
 		{
-			WebElement element = ldriver.findElement((By.cssSelector("div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-grid > div.slds-col.slds-no-flex.slds-grid.slds-align-top > div:nth-child(1) > button:nth-child(2)")));
+			
+			WebElement element = ldriver.findElement((By.xpath("//button[contains(.,'Next')]")));
+			actions.moveToElement(element).click().build().perform();
+			Thread.sleep(5000);
+			/*WebElement element = ldriver.findElement((By.xpath("//button[contains(@class,'slds-button slds-button_neutral')][contains(.,'Next')]")));
+			JavascriptExecutor executor = (JavascriptExecutor)ldriver;
+			executor.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+			Thread.sleep(3000);
+			executor.executeScript("arguments[0].scrollIntoView(true);", element);
+			executor.executeScript("arguments[0].click();", element);
+			Thread.sleep(3000);*/
+			
+			/*Thread.sleep(3000);
+			WebElement element = ldriver.findElement((By.cssSelector("#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-grid > div.slds-col.slds-no-flex.slds-grid.slds-align-top > div:nth-child(1) > button:nth-child(2)")));
 			JavascriptExecutor executor = (JavascriptExecutor)ldriver;
 			executor.executeScript("arguments[0].scrollIntoView(true);", element);
 			executor.executeScript("arguments[0].click();", element);
-			Thread.sleep(4000);
+			Thread.sleep(3000);*/
+			
+			/*wait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-grid > div.slds-col.slds-no-flex.slds-grid.slds-align-top > div:nth-child(1) > button:nth-child(2)"))));
+			WebElement element = ldriver.findElement((By.cssSelector("div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-grid > div.slds-col.slds-no-flex.slds-grid.slds-align-top > div:nth-child(1) > button:nth-child(2)")));
+			actions.moveToElement(element);
+			actions.click().build().perform();*/
 			
 		}
 		
@@ -1185,12 +1525,12 @@ public class HospitalSalesPriceListPage {
 		public void clickOnApplyAllButton() throws InterruptedException
 		{
 		    applyAllButton.click();
-			Thread.sleep(9000);
-			wait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cEscalator > ul:nth-child(4) > div > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(5) > div > lightning-input > div > input"))));
+			Thread.sleep(4000);
+			/*wait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cEscalator > ul:nth-child(4) > div > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(5) > div > lightning-input > div > input"))));
 			Thread.sleep(4000);
 			WebElement element = ldriver.findElement((By.cssSelector("div.windowViewMode-normal.oneContent.active.lafPageHost > div > div.slds-page-header.cEscalator > ul:nth-child(4) > div > ul:nth-child(3) > div > div:nth-child(1) > div > div.slds-border_top.slds-border_right.slds-border_bottom.slds-border_left.slds-table--header-fixed_container > div > table > tr:nth-child(2) > td:nth-child(5) > div > lightning-input > div > input")));
 			actions.moveToElement(element);
-			actions.click().build().perform();
+			actions.click().build().perform();*/
 		}
 		
 		/*
@@ -1245,5 +1585,16 @@ public class HospitalSalesPriceListPage {
 			
 		}
 		
+		/*
+		 * Method to click on the Exit button under Translate Page
+		 */
 		
+		public void clickOnExitButton() throws InterruptedException
+		{
+			WebElement element = ldriver.findElement((By.cssSelector("#save > section > div > footer > button.slds-button.slds-button_brand")));
+			JavascriptExecutor executor = (JavascriptExecutor)ldriver;
+			executor.executeScript("arguments[0].scrollIntoView(true);", element);
+			executor.executeScript("arguments[0].click();", element);
+			
+		}
 }

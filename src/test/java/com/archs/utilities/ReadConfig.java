@@ -52,6 +52,24 @@ public class ReadConfig {
 		return arccaturl;
 	}
 	
+	public String getArcAccountDetailURL()
+	{
+		String arcacntdetailurl=properties.getProperty("arcaccountdetailURL");
+		return arcacntdetailurl;
+	}
+	
+	public String getArcContractAssessmentURL()
+	{
+		String arcacontractassessmenturl=properties.getProperty("arccontractassessmentURL");
+		return arcacontractassessmenturl;
+	}
+	
+	public String getArcContractListViewURL()
+	{
+		String arcacontractassessmenturl=properties.getProperty("arccontractlistviewURL");
+		return arcacontractassessmenturl;
+	}
+	
 	public String getChromePath()
 	{
 		String chromepath=properties.getProperty("chromepath");

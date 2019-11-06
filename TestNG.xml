@@ -12,8 +12,23 @@
 		<!-- <parameter name="browser" value="FF" /> -->
 		
 		<classes>
-			<!-- <class name="com.archs.testCases.HospitalSalesLoginPageTest" /> -->
-			<class name="com.archs.testCases.SingleHospitalSalesEndToEndTest" />
+			<!-- <class name="com.archs.testCases.HospitalSalesCreateNewPatientServiceContractTest" /> -->
+			<!-- <class name="com.archs.testCases.HospitalSalesPatientServiceContractExtendDateTest" /> -->
+			<!-- <class name="com.archs.testCases.HospitalSalesPatientServiceStatusTest" /> -->
+			<!-- <class name="com.archs.testCases.HospitalSalesPatientServiceTypeTest" /> -->
+			<!-- <class name="com.archs.testCases.SingleHospitalSalesEndToEndTest" /> -->
+			<!-- <class name="com.archs.testCases.SingleHospitalSalesCATPendingApprovalStatusTest" /> -->
+			<!-- <class name="com.archs.testCases.HospitalSalesPatientServiceContracPriceListValidationTest" /> -->
+			<!-- <class name="com.archs.testCases.SingleHSCATStatusOnlyDirectorApproval" /> -->
+			<!-- <class name="com.archs.testCases.SingleHSCATStatusDirectorReject" /> -->
+			<!-- <class name="com.archs.testCases.SingleHSCATStatusPricingDirectorReject" /> -->
+			<!-- <class name="com.archs.testCases.SingleHospitalSalesCATColorValidatonTest" /> -->
+			<!-- <class name="com.archs.testCases.SingleHospitalSalesCATPageValidationTest" /> -->
+			<!-- <class name="com.archs.testCases.SingleHospitalSalesPriceListValidationTest" /> -->
+			<!-- <class name="com.archs.testCases.SingleHospitalSalesPriceListApprovalValidationTest" /> -->
+			<class name="com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest" />
+			<!-- <class name="com.archs.testCases.SingleHospitalSalesXMLAttachmentValidationTest" />	 -->		
+			
 			</classes>
 
 	</test>

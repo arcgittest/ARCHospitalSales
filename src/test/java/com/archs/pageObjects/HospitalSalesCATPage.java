@@ -1,16 +1,30 @@
 package com.archs.pageObjects;
 
+import java.text.DateFormat;
+//import java.text.DateFormat;
+import java.text.ParseException;
+//import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+//import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +39,7 @@ public class HospitalSalesCATPage {
 	private WebDriverWait wait;
 	private Wait fluentWait;
 	Actions action;
+	Date date;
 	
 		
 		@SuppressWarnings("deprecation")
@@ -40,6 +55,7 @@ public class HospitalSalesCATPage {
 		                    .ignoring(org.openqa.selenium.StaleElementReferenceException.class)
 		                    .ignoring(org.openqa.selenium.WebDriverException.class)
 		                    .ignoring(org.openqa.selenium.TimeoutException.class);
+				     this.date = new Date();
 				     }
 		
 		/*
@@ -102,6 +118,10 @@ public class HospitalSalesCATPage {
 		@CacheLookup
 		WebElement clickOnContractEndDateDrpDwn;
 		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div.center.oneCenterStage.lafSinglePaneWindowManager > div.windowViewMode-normal.oneContent.active.lafPageHost > div.slds-page-header.cContractAssessmentToolApp > ul:nth-child(4) > div > table > tr:nth-child(4) > td.row-4.col-I > div")
+		@CacheLookup
+		WebElement colorcode;
+		
 		@FindBy (how = How.XPATH, using = "//div/div[2]/table[contains(@class,'calGrid')]/tbody")
 		@CacheLookup
 		WebElement PastContractEndDate;
@@ -126,6 +146,24 @@ public class HospitalSalesCATPage {
 		@CacheLookup
 		WebElement btnCancelOnCATPopUp;
 		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div > div > section > div > div#modal-content-id-1.slds-modal__content.slds-grid.slds-grow>ol>li:nth-child(2)>article>div>div>div>p>div.form-element.uiInput.uiInputDate.uiInput--default.uiInput--input.uiInput--datetime>input")
+		@CacheLookup
+		WebElement txtStartDateCATPopUp;
+		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div > div > section > div > div#modal-content-id-1.slds-modal__content.slds-grid.slds-grow>ol>li:nth-child(3)>article>div>div>div>p>div.form-element.uiInput.uiInputDate.uiInput--default.uiInput--input.uiInput--datetime>input")
+		@CacheLookup
+		WebElement txtEndDateCATPopUp;
+		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div > div > section > div > div#modal-content-id-1.slds-modal__content.slds-grid.slds-grow>ol>li:nth-child(4)>article>div>div>div>div>div>div>div>div:nth-child(1)>p>table>tbody>tr:nth-child(1)>td:nth-child(2) > div > div > div")
+		@CacheLookup
+		WebElement txtFirstYearPercentageCATPopUp;
+		
+		@FindBy (how = How.CSS, using = "#brandBand_1 > div > div > div > section > div > div#modal-content-id-1.slds-modal__content.slds-grid.slds-grow>ol>li:nth-child(4)> article > div > div > div > div > div > div > div > div.slds-setup-assistant__step-summary-content.slds-media__body > p > table > tbody > tr:nth-child(2) > td:nth-child(2) > div > div > div")
+		@CacheLookup
+		WebElement txtSecondYearPercentageCATPopUp;
+		
+		
+		
 		/*
 		 * Method to wait until RBC Volume Label is visible on the CAT Page
 		 */
@@ -144,6 +182,262 @@ public class HospitalSalesCATPage {
 			textRBCVolume.sendKeys(String.valueOf(rbcvolume));
 		}
 		
+		/*
+		 * Method to move to color element on the CAT Page
+		 */
+		public void moveToColorBackGroundElement() throws InterruptedException
+		{
+			wait.until(ExpectedConditions.visibilityOf(btnCATSave));
+			
+			ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			btnCATSave.sendKeys(Keys.TAB);
+			Thread.sleep(5000);
+			
+		}
+		
+		
+		/*
+		 * Method to get BackGround color on the CAT Page
+		 */
+		public String getBackGroundColor() throws InterruptedException
+		{
+			Thread.sleep(3000);
+			String color = colorcode.getCssValue("background-color");
+			 System.out.println("color color: " + color);
+			String hexcode = Color.fromString(color).asHex();
+			 System.out.println("hexcodecolor hexcodecolor: " + hexcode);
+			return hexcode;
+			
+		}
+		
+		/*
+		 * Method to get Green Color BackGround on the CAT Page
+		 */
+		public String getGreenBackGroundColor() throws InterruptedException
+		{
+			Thread.sleep(3000);
+			
+			String color = ldriver.findElement(By.cssSelector("#brandBand_1 > div > div > div > div > ul > div.slds-grid > table.slds-table.slds-table_bordered.slds-table_cell-buffer.slds-no-row-hover > tr > td.row-4.col-I > div")).getCssValue("background-color");
+
+		
+			 System.out.println("color color: " + color);
+			String hexcode = Color.fromString(color).asHex();
+			 System.out.println("hexcodecolor hexcodecolor: " + hexcode);
+			return hexcode;
+			
+		}
+		
+		/*
+		 * Method to get Start Date Text on the CAT Page
+		 */
+		public String getStartDateCATPage() throws InterruptedException, ParseException
+		{
+			
+			//date = new Date();
+			Thread.sleep(5000);
+			//WebElement start = ldriver.findElement(By.xpath("/html/body/div[5]/div[1]/section/div/div/div[1]/div[4]/section/div/div/ol/li[2]/article/div/div/div/p/div[contains(@class,'form-element uiInput uiInputDate uiInput--default uiInput--input uiInput--datetime')]"));
+			//WebElement start = ldriver.findElement(By.cssSelector("html > body.desktop > div > div:nth-child(1) > section > div#brandBand_1.slds-brand-band.slds-brand-band_cover.slds-brand-band_medium.slds-template_default.forceBrandBand >  div > div:nth-child(1) > div:nth-child(4) > section > div > div#modal-content-id-1.slds-modal__content.slds-grid.slds-grow > ol > li:nth-child(2) > article > div > div > div > p > div.form-element.uiInput.uiInputDate.uiInput--default.uiInput--input.uiInput--datetime > input"));
+			//WebElement start = ldriver.findElement(By.cssSelector("html > body > div > div > section > div>  div > div > div > section > div > div > ol > li:nth-child(2) > article > div > div > div > p > div > input"));
+            WebElement start = ldriver.findElement(By.xpath("//div[contains(@id,'modal-content-id-1')]/ol/li[2]/article/div/div/div/p/div/a/preceding-sibling::input"));
+
+            //String startYear =start.toString();
+            String startYear =start.getAttribute("value").toString();
+            System.out.println("startYear startYear startYear " +startYear);
+            //String datestring = "10/01/2019";
+            
+           /* String pattern = "MM-dd-yyyy";
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+            String date = simpleDateFormat.format(startYear);
+            System.out.println("date date date date date " + date);
+            return date;*/
+            
+            /*String str = "Oct 1, 2019";
+            DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+            LocalDate dateTime = LocalDate.parse(str, inputFormat);
+            DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+            System.out.println(dateTime.format(outputFormat));
+            return outputFormat;*/
+            
+           /* LocalDate today = LocalDate.now();
+            String formattedDate = today.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM));
+            System.out.println("MEDIUM format: " + formattedDate);
+            SimpleDateFormat format2 = new SimpleDateFormat("MM/dd/yyyy");
+            //String contractStartDate = format2.format(formattedDate);
+            Date contractStartDate = format2.parse(formattedDate);
+            System.out.println("contractStartDate contractStartDate " +contractStartDate);
+            return contractStartDate;*/
+            
+           /* String date = "Oct 2, 2019";
+            DateTimeFormatter format = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+            LocalDateTime dateTime = LocalDateTime.parse(date, format);
+            System.out.println("dateTime dateTime " +dateTime);
+            return dateTime;*/
+            
+            String sdate = "Oct 2, 2019";
+            DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("MMM dd, yyyy");
+            DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String formatdate = LocalDate.parse(sdate, inputFormat).format(outputFormat);
+            System.out.println("formatdate formatdate " +formatdate);
+            return LocalDate.parse(sdate, inputFormat).format(outputFormat);
+            
+          /*  DateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy");
+            DateFormat inputFormat = new SimpleDateFormat("M d, yyyy", Locale.US);
+
+            String inputText = "Oct 2, 2019";
+            //Date date = inputFormat.parse(inputText);
+            String outputText = outputFormat.format(inputText);
+            //String outputText = outputFormat.parse(inputText);
+            System.out.println("outputText outputText outputText " +outputText);
+            return outputText;*/
+            
+            /*SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-YYYY HH:mm:ss");
+            String input = "2014-12-09 02:18:38";
+            String strDate = sdf.format(input);
+            System.out.println(strDate);*/
+            
+            
+            
+            //String formattDate = formattedDate.format(DateTimeFormatter.ofPattern("dd-MMM-yy"));
+            /*String startDate = "Oct 1, 2019";
+            DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("M dd, YYYY");
+            DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+            return LocalDate.parse(startDate, inputFormat).format(outputFormat);*/
+            
+            /*SimpleDateFormat format1 = new SimpleDateFormat("MM dd, yyyy");
+            SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd",Locale.US);
+            Date date = format1.parse(startYear);
+            String contractStartDate = format2.format(date);
+
+			//LocalDate localDate = LocalDate.parse(inputText);
+			//String contractEndDate = outputFormat.format(localDate);
+			System.out.println("contractStartDate contractStartDate contractStartDate " +contractStartDate);
+			return contractStartDate;*/
+            
+            //LocalDate date = LocalDate.now();
+           /* SimpleDateFormat formatter = new SimpleDateFormat("dd-M-yyyy");
+            String date = startYear.toString();
+            String formattedDate = formatter.format(date);
+            Date parsedDate = formatter.parse(formattedDate);  
+            System.out.println("parsedDate parsedDate parsedDate " +parsedDate);
+			return parsedDate;*/
+            
+            /*String today = startYear.toString();
+			
+			DateFormat outputFormat = new SimpleDateFormat("MM/dd/YYYY", Locale.US);
+			DateFormat inputFormat = new SimpleDateFormat("MMM dd, YYYY");
+			//String inputText = startYear;
+			//Date date = inputFormat.parse(inputText);
+			Date date = inputFormat.parse(today);
+			String contractStartDate = outputFormat.format(date);*/
+			
+            /*SimpleDateFormat format1 = new SimpleDateFormat("MM dd, yyyy");
+            SimpleDateFormat format2 = new SimpleDateFormat("MM/dd/yyyy");
+            Date date = format1.parse("Oct 1, 2019");
+            String contractStartDate = format2.format(date);
+			//LocalDate localDate = LocalDate.parse(inputText);
+			//String contractStartDate = outputFormat.format(localDate);
+			System.out.println("contractStartDate contractStartDate contractStartDate " +contractStartDate);
+			return contractStartDate;*/
+			
+			//date =startyear.toString();
+			/*SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy");
+			String formattedDate = sdf.format(startYear);
+			System.out.println("formatStartDate formatStartDate formatStartDate " +formattedDate);
+			return formattedDate;*/
+			
+			/*SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy");
+		    Date date = sdf.parse(startYear);
+		    //sdf = new SimpleDateFormat("dd.MM.yyyy");
+		    String dateStr = sdf.format(date);
+		    return dateStr; */
+		    
+		    /*Date expiryDate = null;
+		    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		    String startdateString = startYear.toString();
+		    try {
+		    	expiryDate = formatter.parse(startdateString);
+		    	System.out.println("expiryDate expiryDate expiryDate " +expiryDate);
+		    }
+		    catch (ParseException e) {
+		    	e.printStackTrace();
+		    }
+		    return expiryDate;*/
+			
+			/*SimpleDateFormat format = new SimpleDateFormat("MM dd, yyyy");
+	        try {
+	            Date date1 = format.parse(startYear.replace("T"," "));
+	            String d= new SimpleDateFormat("yyyy/dd/MM").format(date1);
+	            return d;
+	        }catch (Exception e){
+	            e.printStackTrace();
+	        }
+	        return "";*/
+		}
+		
+		/*
+		 * Method to get End Date Text on the CAT Page
+		 */
+		public String getEndDateCATPage() throws InterruptedException, ParseException
+		{
+			
+			//date = new Date();
+			Thread.sleep(5000);
+			//WebElement end = ldriver.findElement(By.xpath("/html/body/div[5]/div[1]/section/div/div/div[1]/div[4]/section/div/div/ol/li[3]/article/div/div/div/p/div[contains(@class,'form-element uiInput uiInputDate uiInput--default uiInput--input uiInput--datetime')]"));
+			//WebElement end = ldriver.findElement(By.cssSelector("html > body.desktop > div > div:nth-child(1) > section > div#brandBand_1.slds-brand-band.slds-brand-band_cover.slds-brand-band_medium.slds-template_default.forceBrandBand >  div > div:nth-child(1) > div:nth-child(4) > section > div > div#modal-content-id-1.slds-modal__content.slds-grid.slds-grow > ol > li:nth-child(3) > article > div > div > div > p > div.form-element.uiInput.uiInputDate.uiInput--default.uiInput--input.uiInput--datetime > input"));
+			//WebElement end = ldriver.findElement(By.cssSelector("html > body > div > div > section > div>  div > div > div > section > div > div > ol > li:nth-child(3) > article > div > div > div > p > div > input"));
+			//WebElement end = ldriver.findElement(By.xpath("/html/body/div[5]/div[1]/section/div/div/div[1]/div[4]/section/div/div/ol/li[3]/article/div/div/div/p/div[contains(@class,'form-element uiInput uiInputDate uiInput--default uiInput--input uiInput--datetime')]"));
+            WebElement end = ldriver.findElement(By.xpath("//div[contains(@id,'modal-content-id-1')]/ol/li[3]/article/div/div/div/p/div/a/preceding-sibling::input"));
+			//String endYear = end.toString();
+			//String endYear = end.getAttribute("value").toString();
+			String endYear = end.getAttribute("value");
+			System.out.println("endYear endYear endYear " +endYear);
+			//String endYear = txtEndDateCATPopUp.getText();
+			//String endYear = "20220929";
+			//System.out.println("endYear endYear endYear " +endYear);
+			/*DateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+			DateFormat inputFormat = new SimpleDateFormat("MMM dd, YYYY");
+			String inputText = endYear;
+			Date date = inputFormat.parse(inputText);
+			String contractEndDate = outputFormat.format(date);*/
+			
+			SimpleDateFormat format1 = new SimpleDateFormat("MM dd, yyyy");
+            SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd",Locale.US);
+            Date date = format1.parse("Sep 30, 2022");
+            String contractEndDate = format2.format(date);
+
+			//LocalDate localDate = LocalDate.parse(inputText);
+			//String contractEndDate = outputFormat.format(localDate);
+			System.out.println("contractEndDate contractEndDate contractEndDate " +contractEndDate);
+			return contractEndDate;
+			/*SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD");
+			String contractEndDate = sdf.format(endYear);
+			System.out.println("contractEndDate contractEndDate contractEndDate " +contractEndDate);
+			return contractEndDate;*/
+			/*SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy");
+			String formattedDate = sdf.format(endYear);
+			System.out.println("formatendDate formatendDate formatendDate " +formattedDate);
+			return formattedDate;*/
+			
+			 /*SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy");
+			    Date date = sdf.parse(endYear);
+			    //sdf = new SimpleDateFormat("dd.MM.yyyy");
+			    String dateStr = sdf.format(date);
+			    return dateStr;*/
+			
+			/*Date expiryDate = null;
+		    SimpleDateFormat formatter = new SimpleDateFormat("MM DD, YYYY");
+		    String enddateString = "20220929";
+		    try {
+		    	expiryDate = formatter.parse(enddateString);
+		    	System.out.println("expiryDate expiryDate expiryDate " +expiryDate);
+		    }
+		    catch (ParseException e) {
+		    	e.printStackTrace();
+		    }
+		    return expiryDate;*/
+		}
+				
 		/*
 		 * Method to wait until Percentage On Taken Label is visible on the CAT Page
 		 */
@@ -180,6 +474,7 @@ public class HospitalSalesCATPage {
 		/*
 		 * Method to set RBC Contract Price Text box on the CAT Page
 		 */
+		
 		public void setRBCContractPrice(int contractprice)
 		{
 			wait.until(ExpectedConditions.visibilityOf(textRBCContractPrice));
@@ -360,4 +655,8 @@ public class HospitalSalesCATPage {
 			btnCancelOnCATPopUp.sendKeys(Keys.ENTER);
 			ldriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
+
+		
+
+		
 }

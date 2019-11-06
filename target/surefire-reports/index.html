@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-ARC_HospitalSales">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-ARC_HospitalSales" title="com.archs.testCases.SingleHospitalSalesEndToEndTest" hash-for-method="SingleHSEndToEndTest">SingleHSEndToEndTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-ARC_HospitalSales" title="com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest" hash-for-method="SingleHSPriceListAndCATDetailsTabValidationTest">SingleHSPriceListAndCATDetailsTabValidationTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-ARC_HospitalSales -->
@@ -120,25 +120,34 @@
           <div class="suite-ARC_HospitalSales-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.archs.testCases.SingleHospitalSalesEndToEndTest</span>
+              <span class="class-name">com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="SingleHSEndToEndTest">
-                  </a> <!-- SingleHSEndToEndTest -->
-                  <span class="method-name">SingleHSEndToEndTest</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (1c5ef40dfbc430758f5fa7065e260a87)] -&gt; css selector: #oneHeader &gt; div.bBottom &gt; one-appnav &gt; div &gt; one-app-nav-bar &gt; nav &gt; div &gt; one-app-nav-bar-item-root:nth-child(7) &gt; a] (tried for 45 second(s) with 500 milliseconds interval)
+                  <a name="SingleHSPriceListAndCATDetailsTabValidationTest">
+                  </a> <!-- SingleHSPriceListAndCATDetailsTabValidationTest -->
+                  <span class="method-name">SingleHSPriceListAndCATDetailsTabValidationTest</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=77.0.3865.90)
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;VAIO&apos;, ip: &apos;10.0.0.198&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_191&apos;
+System info: host: &apos;VAIO&apos;, ip: &apos;192.168.131.17&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_191&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 75.0.3770.142, chrome: {chromedriverVersion: 75.0.3770.140 (2d9f97485c7b..., userDataDir: C:\WINDOWS\TEMP\scoped_dir1...}, goog:chromeOptions: {debuggerAddress: localhost:62348}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 1c5ef40dfbc430758f5fa7065e260a87
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at com.archs.pageObjects.HospitalSalesAccountDetailsPage.clickOnContractAssessmentLink(HospitalSalesAccountDetailsPage.java:219)
-	at com.archs.testCases.SingleHospitalSalesEndToEndTest.SingleHSEndToEndTest(SingleHospitalSalesEndToEndTest.java:100)
-... Removed 28 stack frames
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: C:\WINDOWS\TEMP\scoped_dir6...}, goog:chromeOptions: {debuggerAddress: localhost:62963}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a1c0ec557f3be7825fe797a4522af158
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:100)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy9.sendKeys(Unknown Source)
+	at com.archs.pageObjects.HospitalSalesAccountDetailsPage.clickOnContractAssessmentLink(HospitalSalesAccountDetailsPage.java:238)
+	at com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest.SingleHSPriceListAndCATDetailsTabValidationTest(SingleHospitalSalesPriceListAndContractDetailsTabValidationTest.java:116)
+... Removed 36 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -160,7 +169,7 @@ Session ID: 1c5ef40dfbc430758f5fa7065e260a87
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;HospitalSales Test&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.archs.testCases.SingleHospitalSalesEndToEndTest&quot;/&gt;
+      &lt;class name=&quot;com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- HospitalSales Test --&gt;
 &lt;/suite&gt; &lt;!-- ARC HospitalSales --&gt;
@@ -202,14 +211,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'SingleHSEndToEndTest')
-data.setCell(0, 2, 'com.archs.testCases.SingleHospitalSalesEndToEndTest')
-data.setCell(0, 3, 323781);
+data.setCell(0, 1, 'SingleHSPriceListAndCATDetailsTabValidationTest')
+data.setCell(0, 2, 'com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest')
+data.setCell(0, 3, 123232);
 window.suiteTableData['ARC_HospitalSales']= { tableData: data, tableDiv: 'times-div-ARC_HospitalSales'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-ARC_HospitalSales">
               </div> <!-- times-div-ARC_HospitalSales -->
             </div> <!-- times-div -->
@@ -235,7 +244,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.archs.testCases.SingleHospitalSalesEndToEndTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.archs.testCases.SingleHospitalSalesPriceListAndContractDetailsTabValidationTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup(chrome)</span>
                 <span class="method-start">0 ms</span>
@@ -243,12 +252,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">SingleHSEndToEndTest</span>
-                <span class="method-start">139555 ms</span>
+                <span class="method-name">SingleHSPriceListAndCATDetailsTabValidationTest</span>
+                <span class="method-start">63363 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">467982 ms</span>
+                <span class="method-start">186818 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
